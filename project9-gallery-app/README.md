@@ -32,23 +32,31 @@
 
         to keep the flicker api-key and it's secret - a secret ....
 
-        ....make sure to place a ref in your .gitignore to the config.js file
+          assuming you are also using github
 
-              For this project you will just need your API-KEY
+            in .gitignore
 
-                The 'SECRET' is needed only when...
+            ....make sure include a ref to the config.js file,
 
-                  the flickr api method requires a sign-on.
+      STEP 3:
 
-                For flickr app sign-on, Flickr requires using OATH.
+      Decide whether you will need to use the SECRET
 
-                  Since I dont use flickr's methods that require a sign-on...
+        For this project you will just need your API-KEY
 
-                  this project does NOT implement OATH.
+          The 'SECRET' is needed only when...
+
+            the flickr api method requires a sign-on.
+
+          For flickr app sign-on, Flickr requires using OATH.
+
+            Since I dont use flickr's methods that require a sign-on...
+
+            so this project does NOT implement OATH.
 
 [To read about, learn how your Flickr app should use OATH follow this link](https://www.flickr.com/services/api/auth.oauth.html)
 
-      STEP 3:
+      STEP 4:
 
       Setup a javascript that exports your API-KEY
 
@@ -68,9 +76,9 @@
          ```
          if you do implement OATH,
 
-         you will probably will not be using this code...
+         you will probably will not be using a this project...
 
-         but if you do and are still using a fork of this repo......
+         but if you do and are still using a copy this repo......
 
          you should add the secret to the flickr object like this
 
@@ -79,17 +87,19 @@
             export default flickr
          ```
 
-      Step 4:
+      Step 5:
 
       Verify the flickr api calls your app will need to make...
 
-          Using the link immedialty below this paragraph.
+          Using the link to flickr's api method helper...
+
+          ...link is immediately below this paragraph...
 
           The flickr api method helper will show the ....
 
             available methods, options and response data
 
-            as well as the complete api url syntax
+            as well as a complete working flickr api url request
 
           but it will also...
 
@@ -103,10 +113,12 @@
 
 [To verify your flickr method api call syntax, follow this link](https://www.flickr.com/services/api/explore/flickr.photos.search)
 
-      Step 5:
+      Step 6:
 
-        If you get past 'Flicker API keys setup' steps 1-4...
+        If you get past 'Flicker API keys setup' steps 1-5...
 
-        then you are proably ready for a little break ...
+        then you are probably ready for a little break ...
 
-        and the next phase.. Godspeed...
+        and the next phase..
+
+        Godspeed...
