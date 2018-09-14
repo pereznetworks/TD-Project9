@@ -2,10 +2,11 @@
 
 # Preface:
 
-  If you are a Developer and Team Treehouse Project Reviewer...
+  If you are a Developer and/or a Team Treehouse Project Reviewer...
+    or just someone who dares to tinker with code in Node.js and React ....
     and you want to modify, build and/or run this app...
 
-[Please see the README.ME under the TD-Project9/project9-gallery-app folder](https://github.com/pereznetworks/TD-Project9/tree/master/project9-gallery-app)
+[Your a welcome to the README.ME for Developers under the TD-Project9/project9-gallery-app folder](https://github.com/pereznetworks/TD-Project9/tree/master/project9-gallery-app)
 
 # Project Summary:
 
