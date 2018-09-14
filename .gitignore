@@ -1,3 +1,7 @@
+# TD-Project9 specific directories and files
+project9-gallery-app/node_modules/
+project9-gallery-app/data/config.js
+
 # Logs
 logs
 *.log
