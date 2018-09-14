@@ -58,14 +58,17 @@
 
           place reference to config.js in the repo's .gitignore under...
 
-`# TD-Project9 specific directories and files
-project9-gallery-app/data/config.js`
+              # TD-Project9 specific directories and files
+              project9-gallery-app/data/config.js`
 
 # Steps to Meet Project Expectations:
 
       Step 1: Use React-Create-app to create an the build environment for the app
 
-          Using the command: `npx create-react-app project9-gallery-app`.
+          Using the command:
 
-          I created the build environment for the app...
+              npx create-react-app project9-gallery-app
+
+          I created the app and the build environment for the app...
+
             which is in the directory, project9-gallery-app/
