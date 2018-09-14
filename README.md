@@ -6,10 +6,17 @@
 
     Preparing for the project:
 
-          Using my Yahoo acct,
-          went to the App Garden and apply for a non-commercial api key..
+      Created this GitHib repo
 
-          [Apply for a non-commercial Flicker API key here..](https://www.flickr.com/services/apps/create/apply/)
+      Got a Flickr Api Key
+
+          Logged in to Flicker, using my Yahoo acct,
+
+          went to the Flickr's App Garden and got a non-commercial api key..
+
+          placed the key in config.js that exports an object, flickr.apikey
+
+          place reference to config.js in the repo's .gitignore  
 
     Step 1: Use React-Create-app to create an the build environment for the app
 
