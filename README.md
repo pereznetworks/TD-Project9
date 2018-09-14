@@ -72,3 +72,25 @@
           I created the app and the build environment for the app...
 
               which is in the directory, project9-gallery-app/
+
+      Step 2:  Download project files and start to map out the App
+
+          mock-up index.html ...
+
+           a main div class, "container"
+
+             and 4 sub-components
+
+              a form component with a class of  "search-form"
+                with a search input and button
+
+              a nav component with a class of "main-nav"
+                  which has ul
+                    with 3 list items
+                      labeled Cats, Dogs, Computers
+
+              a div component with a class of "photo-container"
+                  with a resuslts h2 title
+                  and 4 thumbnail images
+
+              a hidden div component with a calls of 'not-found'
