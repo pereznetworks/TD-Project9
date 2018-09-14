@@ -32,7 +32,7 @@
 
         to keep the flicker api-key and it's secret - a secret ....
 
-        ....make sure to place a ref in your .gitignore to thge config.js file
+        ....make sure to place a ref in your .gitignore to the config.js file
 
                 The 'secret' is needed only when...
 
