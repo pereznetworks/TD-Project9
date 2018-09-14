@@ -14,11 +14,19 @@
 
 # Project Summary:
 
-  As part of Team Treehouse Full-Stack Java Script Tech Degree...
+      As part of Team Treehouse Full-Stack Java Script Tech Degree...
 
-  In this project, we are challenged to create a Gallery App with React.
+      In this project, we are challenged to create a Gallery App with React.
 
-    Preparing for the project:
+      I detail the steps I took in
+
+      Preparing for the Project...
+
+      Meeting Project Expectations...
+
+      Exceeding Project Expectations...
+
+# Preparing for the project:
 
       Created this GitHib repo
 
@@ -39,7 +47,9 @@
           # TD-Project9 specific directories and files
           project9-gallery-app/data/config.js
 
-    Step 1: Use React-Create-app to create an the build environment for the app
+# Steps to Meet Project Expectations:
+
+      Step 1: Use React-Create-app to create an the build environment for the app
 
           Using the command: `npx create-react-app project9-gallery-app`.
 
