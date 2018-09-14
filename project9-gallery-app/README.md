@@ -81,7 +81,7 @@
          the code may look like this...
 
  `
-    const flickr = {apikey: 'yourkey',}
+    const flickr = {apikey: 'yourkey',};
     export default flickr
  `
          if you do implement OATH,
@@ -93,7 +93,7 @@
          you should add the secret to the flickr object like this
 
  `
-    const flickr = {apikey: 'yourkey', secret: 'yourSecret'}
+    const flickr = {apikey: 'yourkey', secret: 'yourSecret'};
     export default flickr
  `
 
