@@ -98,6 +98,11 @@
     export default flickr
  `
 
+      then make sure do into the code and make sure your is using...
+
+      flickr.secret everywhere that it uses the flickr.apikey
+
+
       Step 5:
 
       Verify the flickr api call and methods your app will need...
