@@ -60,7 +60,7 @@
 
             Since I dont use flickr's methods that require a sign-on...
 
-            so this project does NOT implement OATH.
+            this project does NOT implement OATH.
 
 [To read about, learn how your Flickr app should use OATH follow this link](https://www.flickr.com/services/api/auth.oauth.html)
 
