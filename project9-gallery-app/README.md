@@ -84,6 +84,7 @@
     const flickr = {apikey: 'yourkey',};
     export default flickr
  `
+
          if you do implement OATH,
 
          you will probably will not be using a copy this project...
