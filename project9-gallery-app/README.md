@@ -16,4 +16,4 @@
 
       and go to the App Garden and apply for a non-commercial api key..
 
-[apply for a non-commercial api key](https://www.flickr.com/services/apps/create/apply/)
+[Apply for a non-commercial api key here..](https://www.flickr.com/services/apps/create/apply/)
