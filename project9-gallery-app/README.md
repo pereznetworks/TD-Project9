@@ -103,6 +103,7 @@
       flickr.secret everywhere that it uses the flickr.apikey
 
 
+
       Step 5:
 
       Verify the flickr api call and methods your app will need...
