@@ -92,10 +92,10 @@
 
          you should add the secret to the flickr object like this
 
-         ```
-            const flickr = {apikey: 'yourkey', secret: 'yourSecret'}
-            export default flickr
-         ```
+ ```
+    const flickr = {apikey: 'yourkey', secret: 'yourSecret'}
+    export default flickr
+ ```
 
       Step 5:
 
