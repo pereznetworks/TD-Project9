@@ -1,7 +1,8 @@
 # TD-Project9 Summary:
 
   As part of Team Treehouse Full-Stack Java Script Tech Degree...
-   In this project, we are challenged to create a Gallery App with React.
+
+  In this project, we are challenged to create a Gallery App with React.
 
     Step 1: Use React-Create-app to create an the build environment for the app
 
