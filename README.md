@@ -1,5 +1,10 @@
 # TD-Project9 Summary:
 
+  If you are a Developer and Team Treehouse Project Reviewer...
+    and you want to modify, build and/or run this app...
+
+[Please see the README.ME under the TD-Project9/project9-gallery-app folder](https://github.com/pereznetworks/TD-Project9/tree/master/project9-gallery-app)
+
   As part of Team Treehouse Full-Stack Java Script Tech Degree...
 
   In this project, we are challenged to create a Gallery App with React.
