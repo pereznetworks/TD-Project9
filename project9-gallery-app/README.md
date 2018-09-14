@@ -24,7 +24,7 @@
 
       STEP 2:
 
-      Place your API-KEY and associated SECRET in a safe, secure placed
+      Place your API-KEY and associated SECRET in a safe, secure place
 
         in your code, place it in a separate file that is....
 
