@@ -39,8 +39,8 @@
 
           added a section line at the top of .gitignore...
 
-          # TD-Project9 specific directories and files
-          project9-gallery-app/node_modules/
+            `# TD-Project9 specific directories and files`
+            `project9-gallery-app/node_modules/`
 
       Created my documentation of Flickr's API docs
 
