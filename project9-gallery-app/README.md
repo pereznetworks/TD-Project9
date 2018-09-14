@@ -34,7 +34,9 @@
 
         ....make sure to place a ref in your .gitignore to the config.js file
 
-                The 'secret' is needed only when...
+              For this project you will just need your API-KEY
+
+                The 'SECRET' is needed only when...
 
                   the flickr api method requires a sign-on.
 
