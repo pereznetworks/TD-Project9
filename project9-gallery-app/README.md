@@ -20,7 +20,9 @@
 
     a Flickr non-commercial api key.
 
-    Steps to get a Flicker non-commercial api key:
+    I did not include mine in this repo for obvious reasons..
+    
+# Steps to get a Flicker non-commercial api key:
 
       STEP 1:
 
