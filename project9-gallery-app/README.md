@@ -4,13 +4,21 @@
 
     This readme.md provides the basic how-to ..
 
-    .. for developers who might fork this repo.
+    .. for developers who might download and/or clone this repo.
 
     .. and want to modify it, build and run their own version
 
+# Assuming you know to download and/or for a github repo...
+
+    if not do yet know how to clone or download a github repo...
+
+    go back grasshopper, go back...
+
 # Flicker API keys setup:
 
-  To get this project up and running you will need a Flickr non-commercial api key.
+    To get this project up and running you will need...
+
+    a Flickr non-commercial api key.
 
     Steps to get a Flicker non-commercial api key:
 
