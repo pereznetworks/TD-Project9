@@ -8,7 +8,7 @@
 
       Created this GitHib repo
 
-          added a section line at the top of .gitignore
+          added a section line at the top of .gitignore...
 
           # TD-Project9 specific directories and files
           project9-gallery-app/node_modules/
@@ -21,8 +21,7 @@
 
           placed the key in config.js that exports an object, flickr.apikey
 
-          place reference to config.js in the repo's .gitignore  
-          under
+          place reference to config.js in the repo's .gitignore under...
           # TD-Project9 specific directories and files
           project9-gallery-app/data/config.js
 
