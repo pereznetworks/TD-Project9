@@ -10,14 +10,14 @@
 
     then you are welcome to click on the link below...
 
+  [README.MD for building and running the TD-Project9/project9-gallery-app](https://github.com/pereznetworks/TD-Project9/tree/master/project9-gallery-app)
+
   If you want to get a little background on this project and ...
 
     what it took to complete it
 
     then continue reading and come back to the link later...
-    
 
-[README.MD for building and running the TD-Project9/project9-gallery-app](https://github.com/pereznetworks/TD-Project9/tree/master/project9-gallery-app)
 
 # Project Summary:
 
