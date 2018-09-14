@@ -80,10 +80,10 @@
 
          the code may look like this...
 
- ```
+ `
     const flickr = {apikey: 'yourkey',}
     export default flickr
- ```
+ `
          if you do implement OATH,
 
          you will probably will not be using a copy this project...
@@ -92,10 +92,10 @@
 
          you should add the secret to the flickr object like this
 
- ```
+ `
     const flickr = {apikey: 'yourkey', secret: 'yourSecret'}
     export default flickr
- ```
+ `
 
       Step 5:
 
