@@ -9,4 +9,4 @@
           Using the command: `npx create-react-app project9-gallery-app`.
 
           I created the build environment for the app...
-            which is in the directory, project9-gallery-app.
+            which is in the directory, project9-gallery-app/
