@@ -1,6 +1,6 @@
 # TD-Project9 - Another React Gallery App
 
-# Project Preface:
+# Preface:
 
   If you are a Developer and Team Treehouse Project Reviewer...
     and you want to modify, build and/or run this app...
