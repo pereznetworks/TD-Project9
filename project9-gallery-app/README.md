@@ -91,18 +91,19 @@
 
          but if you do and are still using a copy this repo......
 
-         you should add the secret to the flickr object like this
+         you should add the secret to the flickr object
+
+         as indicate in the code snippet below
+
+         then make sure do into the code and make sure the app is using...
+
+         flickr.secret everywhere that it uses the flickr.apikey
+         
 
  `
     const flickr = {apikey: 'yourkey', secret: 'yourSecret'};
     export default flickr
  `
-
-      then make sure do into the code and make sure the app is using...
-
-      flickr.secret everywhere that it uses the flickr.apikey
-
-
 
       Step 5:
 
