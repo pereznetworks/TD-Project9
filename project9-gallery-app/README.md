@@ -1,8 +1,10 @@
 # TD-Project 9 React Gallery App:
 
+# For Developers:
+
   This readme.md will eventually contain...
 
-  some how-to for developers who might fork this repo.
+    how-to for developers who might fork this repo.
 
 # Flicker API keys:
 
