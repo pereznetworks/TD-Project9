@@ -58,8 +58,8 @@
 
           place reference to config.js in the repo's .gitignore under...
 
-          `# TD-Project9 specific directories and files
-          project9-gallery-app/data/config.js`
+`# TD-Project9 specific directories and files
+project9-gallery-app/data/config.js`
 
 # Steps to Meet Project Expectations:
 
