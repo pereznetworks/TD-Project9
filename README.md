@@ -1,4 +1,4 @@
-# TD-Project9 - Another React Gallery App
+# TD-Project9 - Yet Another React Gallery App
 
 # Preface:
 
