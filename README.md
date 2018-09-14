@@ -42,6 +42,12 @@
           # TD-Project9 specific directories and files
           project9-gallery-app/node_modules/
 
+      Created my documentation of Flickr's API docs
+
+          read and digested Flickr exhaustive API documentation
+
+          saved the bits I would need and some important links
+
       Got a Flickr Api Key
 
           Logged in to Flicker, using my Yahoo acct,
@@ -51,8 +57,9 @@
           placed the key in config.js that exports an object, flickr.apikey
 
           place reference to config.js in the repo's .gitignore under...
-          # TD-Project9 specific directories and files
-          project9-gallery-app/data/config.js
+
+          `# TD-Project9 specific directories and files
+          project9-gallery-app/data/config.js`
 
 # Steps to Meet Project Expectations:
 
