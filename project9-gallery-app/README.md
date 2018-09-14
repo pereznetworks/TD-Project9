@@ -21,7 +21,7 @@
     a Flickr non-commercial api key.
 
     I did not include mine in this repo for obvious reasons..
-    
+
 # Steps to get a Flicker non-commercial api key:
 
       STEP 1:
@@ -74,16 +74,16 @@
 
          will try to import the API-KEY from a javascript file, like this...
 
-         `import flicker from '../data/config`
+`import flicker from '../data/config`
 
          this javscript file is expected to export a key in a object,
 
          the code may look like this...
 
-         ```
-            const flickr = {apikey: 'yourkey',}
-            export default flickr
-         ```
+ ```
+    const flickr = {apikey: 'yourkey',}
+    export default flickr
+ ```
          if you do implement OATH,
 
          you will probably will not be using a copy this project...
