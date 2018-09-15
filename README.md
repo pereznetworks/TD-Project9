@@ -119,17 +119,17 @@
                           that should be hidden
                            unless no results are found
 
-      Step 4: Setup Routes
+      Step 4: Plan and Setup Routes
 
-          Routes setup as of 9/14/2018 are:
-          This is subject to change during this initial development phase
+          am a little unclear if the search form and the nav buttons
+            should be rendered on the page at the same time
 
-            / : loads the header components
-                header components:
+            / : loads the header component
+                sub components:
                   a search form
                   may also include a logo, title, etc..
 
-            / : a nav component
+            /nav : a nav component
                   with 3 default links
                   to show that categories of photos
                   and nav-link route and sub-components also
@@ -161,7 +161,7 @@
 
               I am hard-coding the safe-search option to highest level = 3
 
-      TODO: plug the json response data into the  various components
+      TODO: plug the json response data into the various components
 
             so that photos display
 
