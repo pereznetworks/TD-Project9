@@ -133,7 +133,17 @@
 
       Step 6:
 
-        If you get past 'Flicker API keys setup' steps 1-5...
+[A how to json file can be found here](./src/Flickr/howTo.json)
+
+[A sample set of data set can be found here ](./src/Flickr/sample.json)
+
+        using flickr.photo.search
+
+        with a query of sunset
+
+     Step 7:
+
+        If you get past 'Flicker API keys setup' steps 1-6...
 
         then you are probably ready for a little break ...
 

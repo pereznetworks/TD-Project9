@@ -35,7 +35,7 @@ export default class App extends Component {
     axios.get(`${this.apicall}`)
       .then(response => {
         this.setState({
-          pictures: response.data
+          pictures: response.data;
         });
         console.log(this.state.pictures);
       })

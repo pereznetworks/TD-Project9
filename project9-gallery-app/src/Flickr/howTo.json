@@ -1,0 +1,13 @@
+{
+  "syntax": {
+    "flickrPhotoUrlHowTo": "https://www.flickr.com/services/api/misc.urls.html",
+    "ownerProfile": "https://www.flickr.com/people/{user-id}",
+    "photoStream": "https://www.flickr.com/photos/{user-id}",
+    "individualPhoto": "https://www.flickr.com/photos/{user-id}/{photo-id}",
+    "allPhotosets": "https://www.flickr.com/photos/{user-id}/sets/",
+    "singlePphotoset": "https://www.flickr.com/photos/{user-id}/sets/{photoset-id}"
+  },
+  "sampleUrls": {
+    "actualInvidivualPhotoUrl": "https://www.flickr.com/photos/151102696@N08/44684759971"
+  }
+}
