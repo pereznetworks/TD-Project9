@@ -140,21 +140,24 @@
 
       Step 5: Verify flick api call is working
 
-            using just fetch was logging 'http pinning is deprecated' warnings
-            so switched to axion
+            using just fetch and axios, am getting warnings:
 
-              verified I am getting response in json format
+              HTTP-Based Public Key Pinning is deprecated.
+              Chrome 69 and later will ignore HPKP response headers.
+              (Host: api.flickr.com)
 
-            for the sake of showing this to friends and family
+            verified I am getting response in json format
+
+              for the sake of showing this to friends and family
 
               I am hard-coding the safe-search option to highest level = 3
 
-      TODO: plug the data into various components
+      TODO: plug the json response data into the  various components
 
             so that photos display
 
-            make sure that photos do a quick zoom affect
+              make sure that photos do a quick zoom affect
 
-            just like in the app-mockup
+              just like in the app-mockup
 
       TODO: implement query search
