@@ -124,16 +124,25 @@
           Routes setup as of 9/14/2018 are:
           This is subject to change during this initial development phase
 
-            / : home which always loads the header and nav components
-                the header components
-                  has a sub component : search
-                the nav is a top-level component for now
-                  may be implementing sub-components here also
+            / : loads the header components
+                header components:
+                  a search form
+                  may also include a logo, title, etc..
+
+            / : a nav component
+                  with 3 default links
+                  to show that categories of photos
+                  and nav-link route and sub-components also
+
+            /search : when searching for new categories of images.
+                  the search form will appear,
+                  replacing the nav component
+                  when search results are shown the nav compnent will show
+                    the button labels will change...
+                    to show the requested search categories
 
             /gallery  : gallery
-                will implement a similar route with parameters
-                  the parameters will be passed from the header/search component
-              and from the nav component
+               displaying photos from the nav component and search component
 
             /not found  : not found
                 only displayed when no results returned or 404 page not found
