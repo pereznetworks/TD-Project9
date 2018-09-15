@@ -163,7 +163,7 @@
 
               I am hard-coding the safe-search option to highest level = 3
 
-      Step 6: Adjust Routes to use {match} and NavLinks
+      Step 6: Adjust Routes to use BrowserRouter, {match} and NavLinks
 
               but still may need to find a way to pass props
 
