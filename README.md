@@ -157,7 +157,7 @@
 
             verified I am getting response in json format
 
-              for the sake of showing this to friends and family
+              for the sake of making family-friendly
 
               I am hard-coding the safe-search option to highest level = 3
 
