@@ -19,23 +19,33 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      pictures: []
+      pictures: [],
+      loading: true
     };
     this.flickr = {
+      weburl: 'https://www.flickr.com/photos',
+      ownerid: '/',
+      photoid: '/',
       apikey: Api.key,
       method: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=',
       options: '&per_page=24&format=json&nojsoncallback=1',
       search: '&tags=',
-      query: 'sunsets'
+      query: 'sunsets',
     };
     this.apicall = `${this.flickr.method}${this.flickr.apikey}${this.flickr.search}${this.flickr.query}${this.flickr.options}`;
   }
 
   componentDidMount() {
+    this.searchForPictures();
+  }
+
+  searchForPictures(query='sunsets'){
+    this.flickr.query=query;
     axios.get(`${this.apicall}`)
       .then(response => {
         this.setState({
-          pictures: response.data
+          pictures: response.data,
+          loading: false
         });
         console.log(this.state.pictures);
       })
@@ -49,10 +59,18 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <div className="container">
-          <Header />
+          <Header
+            onSearch={this.searchForPictures}
+            flickr={this.flickr}
+           />
           <Nav />
           <Switch>
-            <Route path='/gallery' component={Gallery}/>
+            <Route path='/gallery'
+              component={Gallery}
+              pictures={this.state.pictures.photo}
+              flickr={this.flickr}
+              apicall={this.apicall}
+            />
             <Route component={NotFound}/>
           </Switch>
         </div>

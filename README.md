@@ -149,17 +149,23 @@
 
       Step 5: Verify flick api call is working
 
-            using just fetch and axios, am getting warnings:
+            using just both fetch and axios, am getting warnings:
 
               HTTP-Based Public Key Pinning is deprecated.
               Chrome 69 and later will ignore HPKP response headers.
               (Host: api.flickr.com)
+
+              probably because am not using OATH sign-on
 
             verified I am getting response in json format
 
               for the sake of making family-friendly
 
               I am hard-coding the safe-search option to highest level = 3
+
+      Step 6: Adjust Routes to use {match} and NavLinks
+
+              but still may need to find a way to pass props
 
       TODO: plug the json response data into the various components
 

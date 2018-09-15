@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-import Search from './Search';
+import SearchForm from './Search';
 
-const Header = (props) => (
-  <Search />
-);
+class Header extends Component {
+  render(){
+    return <SearchForm
+      onSearch={this.props.onSearch}
+      flickr={this.props.flickr}
+      />;
+  }
+};
 
 export default Header
