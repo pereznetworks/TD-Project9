@@ -83,21 +83,36 @@
 
           b: Studied mock-up index.html and project speqs
 
-              a main div class, "container"
+              the app should have
 
-                and 4 sub-components
+                  a header component
 
-                  a form component with a class of  "search-form"
-                    with a search input and button
+                    with a title, logo and a
+                    form sub-component
+                      with a class of  "search-form"
+                      with a search input and button
 
                   a nav component with a class of "main-nav"
-                      which has ul
-                        with 3 list items
+                     a sub-component
+                         and a ul
+                          with 3 list items
                           labeled Cats, Dogs, Computers
 
-                  a div component with a class of "photo-container"
-                      with a resuslts h2 title
-                      and 4 thumbnail images
+                     a div sub-component with a class of "photo-container"
+                      the photo-container has 3 sub components
 
-                  a div component with a calls of 'not-found'
-                     that should probably be hidden unless no results are found
+                        the Gallery itself
+                          the search results or photos to be displayed
+                          an h2 title
+                          demo has ul/li 4 thumbnail images
+
+                        a Gallery sub-component
+                          each img is displayed is an li  
+                          apparently is needs to be
+                            a single reusable component
+                            when iterating through each search result
+                              to be used to render each img  
+
+                        a div with a class of 'not-found'
+                          that should be hidden
+                           unless no results are found
