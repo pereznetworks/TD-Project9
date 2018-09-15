@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import axios from 'axios';
 
 /** styling **/
 import './index.css';
@@ -24,16 +25,19 @@ export default class App extends Component {
       apikey: Api.key,
       method: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=',
       options: '&per_page=24&format=json&nojsoncallback=1',
+      search: '&tags=',
+      query: 'sunsets'
     };
-    this.apicall = `${this.flickr.method}${this.flickr.apikey}${this.flickr.options}`;
+    this.apicall = `${this.flickr.method}${this.flickr.apikey}${this.flickr.search}${this.flickr.query}${this.flickr.options}`;
   }
 
   componentDidMount() {
-
-    fetch(`${this.apicall}`)
-      .then(response => response.json())
-      .then(responseData => {
-        this.setState({ pictures: responseData.data });
+    axios.get(`${this.apicall}`)
+      .then(response => {
+        this.setState({
+          pictures: response.data
+        });
+        console.log(this.state.pictures);
       })
       .catch(error => {
         console.log('Error fetching and parsing data', error);
@@ -42,7 +46,6 @@ export default class App extends Component {
 
   render() {
     console.log(this.apicall);
-    console.log(this.state.pictures);
     return (
       <BrowserRouter>
         <div className="container">
