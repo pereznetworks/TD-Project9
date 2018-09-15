@@ -133,13 +133,16 @@
 
       Step 6:
 
-[A how to json file can be found here](./src/Flickr/howTo.json)
+          using flickr.photo.search
+
+          with a query of sunset
+
+          I saved a sample set of data to a json file
+
+[A how to piece web urls together saved in json format can be found here](./src/Flickr/howTo.json)
 
 [A sample set of data set can be found here ](./src/Flickr/sample.json)
 
-        using flickr.photo.search
-
-        with a query of sunset
 
      Step 7:
 
