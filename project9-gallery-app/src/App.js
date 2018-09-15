@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 import axios from 'axios';
 
 /** styling **/
@@ -10,7 +10,7 @@ import Api from './Flickr/config.js';
 
 /** modular components **/
 import Header from './Header';
-import Nav from './Nav';
+import SearchForm from './Header/Search';
 import Gallery from './Gallery';
 import NotFound from './Gallery/NotFound';
 
@@ -56,23 +56,25 @@ export default class App extends Component {
 
   render() {
     console.log(this.apicall);
+    console.log(this.state.pictures);
     return (
       <BrowserRouter>
         <div className="container">
-          <Header
-            onSearch={this.searchForPictures}
-            flickr={this.flickr}
-           />
-          <Nav />
-          <Switch>
-            <Route path='/gallery'
-              component={Gallery}
-              pictures={this.state.pictures.photo}
-              flickr={this.flickr}
-              apicall={this.apicall}
-            />
-            <Route component={NotFound}/>
-          </Switch>
+                <Route exact path='/'
+                    component={Header}
+                    onSearch={this.searchForPictures}
+                    flickr={this.flickr}
+                    pictures={this.state.pictures.photo}
+                    apicall={this.apicall}/>
+                <Route path='/search' component={SearchForm}/>
+                <Route path='/gallery'
+                      component={Gallery}
+                      pictures={this.state.pictures.photo}
+                      flickr={this.flickr}
+                      apicall={this.apicall}
+                  />
+
+                <Route component={NotFound}/>
         </div>
       </BrowserRouter>
     );

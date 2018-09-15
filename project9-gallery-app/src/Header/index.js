@@ -4,10 +4,15 @@ import SearchForm from './Search';
 
 class Header extends Component {
   render(){
-    return <SearchForm
-      onSearch={this.props.onSearch}
-      flickr={this.props.flickr}
-      />;
+    return (
+      <nav className="main-nav">
+        <ul>
+          <li><a href='/gallery/Cats'>Cats</a></li>
+          <li><a href='/gallery/Dogs'>Dogs</a></li>
+          <li><a href='/gallery/Computers'>Computers</a></li>
+          <li><a href='/search'>Search</a></li>
+        </ul>
+      </nav>);
   }
 };
 
