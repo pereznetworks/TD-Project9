@@ -74,15 +74,15 @@
 
          will try to import the API-KEY from a javascript file, like this...
 
-`import flicker from '../data/config`
+`import flicker from '../Flickr/config`
 
          this javscript file is expected to export a key in a object,
 
          the code may look like this...
 
  `
-    const flickr = {apikey: 'yourkey',};
-    export default flickr
+    const Api = {key: 'yourkey',};
+    export default Api
  `
 
          if you do implement OATH,
@@ -97,12 +97,12 @@
 
          then make sure do into the code and make sure the app is using...
 
-         flickr.secret everywhere that it uses the flickr.apikey
-         
+         Api.secret everywhere that it uses the Api.key
+
 
  `
-    const flickr = {apikey: 'yourkey', secret: 'yourSecret'};
-    export default flickr
+    const Api = {key: 'yourkey', secret: 'yourSecret'};
+    export default Api
  `
 
       Step 5:
