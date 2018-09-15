@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 /** styling **/
 import './index.css';
@@ -8,20 +9,16 @@ import Header from './Header';
 import Nav from './Nav';
 import Gallery from './Gallery';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="container">
-
-        <Header />
-
-        <Nav />
-
-        <Gallery />
-
-      </div>
-    );
-  }
-}
+const App = () => (
+  <BrowserRouter>
+    <div className="container">
+      <Header />
+      <Nav />
+      <Switch>
+        <Route path='/gallery' component={Gallery}/>
+      </Switch>
+    </div>
+  </BrowserRouter>
+)
 
 export default App;

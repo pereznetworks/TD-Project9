@@ -1,7 +1,5 @@
 import React from 'react';
 
-/** import Search from './Search'; **/
-
 const Gallery = (props) => (
   <div className="photo-container">
     <h2>Results</h2>
