@@ -75,15 +75,17 @@
 
       Step 2:  Download project files and start to map out the App
 
-          A: from from project files...
+          from from project files...
 
              imported css and 'container' div into ./src/App.js
 
-             edited only as much html so that mockup of app would load             
+             edited html into jsx format so that...
 
-          b: Studied mock-up index.html and project speqs
+                app would load  and look exactly like the app-mockup           
 
-              the app should have
+      Step 3:   Studied app-mockup and project speqs
+
+              the app should have at least..
 
                   a header component
 
@@ -116,3 +118,43 @@
                         a div with a class of 'not-found'
                           that should be hidden
                            unless no results are found
+
+      Step 4: Setup Routes
+
+          Routes setup as of 9/14/2018 are:
+          This is subject to change during this initial development phase
+
+            / : home which always loads the header and nav components
+                the header components
+                  has a sub component : search
+                the nav is a top-level component for now
+                  may be implementing sub-components here also
+
+            /gallery  : gallery
+                will implement a similar route with parameters
+                  the parameters will be passed from the header/search component
+              and from the nav component
+
+            /not found  : not found
+                only displayed when no results returned or 404 page not found
+
+      Step 5: Verify flick api call is working
+
+            using just fetch was logging 'http pinning is deprecated' warnings
+            so switched to axion
+
+              verified I am getting response in json format
+
+            for the sake of showing this to friends and family
+
+              I am hard-coding the safe-search option to highest level = 3
+
+      TODO: plug the data into various components
+
+            so that photos display
+
+            make sure that photos do a quick zoom affect
+
+            just like in the app-mockup
+
+      TODO: implement query search
