@@ -51,6 +51,8 @@ input {
 }
 
 .main-nav a {
+  width: 100px;
+  padding: 20px;
   display: block;
   background: #438bbd;
   border-radius: 3px;
