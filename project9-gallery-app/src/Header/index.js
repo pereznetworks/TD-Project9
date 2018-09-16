@@ -5,7 +5,7 @@ import Gallery from '../Gallery'
 const Header = props =>
     <div>
       <h2>Flickr Photo Gallery</h2>
-      <Nav />
+      <Nav onSearch={props.onSearch}/>
       <div className="photo-container">
         <ul>
           <Gallery {...props}

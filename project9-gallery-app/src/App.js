@@ -35,7 +35,7 @@ export default class App extends Component {
       method: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=',
       options: '&per_page=24&format=json&nojsoncallback=1&safe_search=1',
       search: '&tags=',
-      query: 'sunsets',
+      query: '',
     };
     this.apicall = `${this.flickr.method}${this.flickr.apikey}${this.flickr.search}${this.flickr.query}${this.flickr.options}`;
   }
@@ -47,6 +47,8 @@ export default class App extends Component {
   searchForPictures(query){
     if (query) {
       this.flickr.query=query;
+    } else {
+      this.flickr.query='sunsets';
     }
     let apicall = `${this.flickr.method}${this.flickr.apikey}${this.flickr.search}${this.flickr.query}${this.flickr.options}`;
     axios.get(`${apicall}`)
@@ -78,6 +80,7 @@ export default class App extends Component {
                          <Header {...props}
                            flickr={this.flickr}
                            photos={this.state.flickrData.photos.photo}
+                           onSearch={this.searchForPictures}
                          />}
                 />
                 <Route path='/search'
