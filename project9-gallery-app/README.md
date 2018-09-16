@@ -139,7 +139,10 @@
 
           I saved a sample set of data to a json file
 
-[A how to piece web urls together saved in json format can be found here](./src/Flickr/howTo.json)
+
+[A how to piece web urls together, including image size, safe-search, # per page..](https://www.flickr.com/services/api/misc.urls.html)
+
+[Sample Photo src url, saved to json format](./src/Flickr/howTo.json)
 
 [A sample set of data set can be found here ](./src/Flickr/sample.json)
 

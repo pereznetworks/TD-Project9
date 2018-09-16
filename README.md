@@ -126,13 +126,9 @@
 
             / : loads the header component
                 sub components:
-                  a search form
+                  with nav link button and a Search button
                   may also include a logo, title, etc..
-
-            /nav : a nav component
-                  with 3 default links
-                  to show that categories of photos
-                  and nav-link route and sub-components also
+                loads gallery component to show default set of sunset pics
 
             /search : when searching for new categories of images.
                   the search form will appear,
@@ -140,9 +136,13 @@
                   when search results are shown the nav compnent will show
                     the button labels will change...
                     to show the requested search categories
+                  loads gallery component to show default set of sunset pics
+                  but then does replace default results with search results
 
             /gallery  : gallery
+               reusable component is loaded to display pictures
                displaying photos from the nav component and search component
+               used by home and search routes
 
             /not found  : not found
                 only displayed when no results returned or 404 page not found
@@ -161,7 +161,7 @@
 
               for the sake of making family-friendly
 
-              I am hard-coding the safe-search option to highest level = 3
+              I am hard-coding the safe-search option to safe = 1
 
       Step 6: Adjust Routes to use BrowserRouter, {match} and NavLinks
 

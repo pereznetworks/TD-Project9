@@ -1,13 +1,10 @@
 {
   "syntax": {
-    "flickrPhotoUrlHowTo": "https://www.flickr.com/services/api/misc.urls.html",
-    "ownerProfile": "https://www.flickr.com/people/{user-id}",
-    "photoStream": "https://www.flickr.com/photos/{user-id}",
-    "individualPhoto": "https://www.flickr.com/photos/{user-id}/{photo-id}",
-    "allPhotosets": "https://www.flickr.com/photos/{user-id}/sets/",
-    "singlePphotoset": "https://www.flickr.com/photos/{user-id}/sets/{photoset-id}"
+    "regular": "{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg",
+    "specifyImgSize": "{farm-id}.staticflickr.com/{server-id}/{id}_{o-secret}_o.jpg"
   },
   "sampleUrls": {
-    "actualInvidivualPhotoUrl": "https://www.flickr.com/photos/151102696@N08/44684759971"
+    "WebPhotoUrl": "https://www.flickr.com/photos/151102696@N08/44684759971"
+    "PhotoSrcUrl": "https://farm2.staticflickr.com/1846/43793268375_c8a11ce332.jpg",
   }
 }

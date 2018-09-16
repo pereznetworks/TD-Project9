@@ -33,7 +33,7 @@ export default class App extends Component {
       sizeSuffix: '.jpg',
       apikey: Api.key,
       method: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=',
-      options: '&per_page=24&format=json&nojsoncallback=1',
+      options: '&per_page=24&format=json&nojsoncallback=1&safe_search=1',
       search: '&tags=',
       query: 'sunsets',
     };
