@@ -1,20 +1,19 @@
 import React from 'react';
+import Nav from '../Nav';
 import Gallery from '../Gallery'
 
 const Header = props =>
-    <div className="container">
-      <nav className="main-nav">
+    <div>
+      <h2>Flickr Photo Gallery</h2>
+      <Nav />
+      <div className="photo-container">
         <ul>
-          <li><a href='/gallery/Cats'>Cats</a></li>
-          <li><a href='/gallery/Dogs'>Dogs</a></li>
-          <li><a href='/gallery/Computers'>Computers</a></li>
-          <li><a href='/search'>Search</a></li>
+          <Gallery {...props}
+              flickr={props.flickr}
+              photos={props.photos}
+          />
         </ul>
-      </nav>
-      <Gallery {...props}
-        flickr={props.flickr}
-        photos={props.photos}
-      />
+      </div>;
     </div>;
 
 export default Header

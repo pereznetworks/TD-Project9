@@ -11,7 +11,6 @@ import Api from './Flickr/config.js';
 /** modular components **/
 import Header from './Header';
 import SearchForm from './Header/Search';
-import Gallery from './Gallery';
 import NotFound from './Gallery/NotFound';
 
 export default class App extends Component {
@@ -20,8 +19,10 @@ export default class App extends Component {
     super();
     this.state = {
       flickrData: {},
+      query: '',
       loading: true
     };
+    this.searchForPictures = this.searchForPictures.bind(this),
     this.flickr = {
       weburl: 'https://farm',
       farm: '2',
@@ -43,15 +44,19 @@ export default class App extends Component {
     this.searchForPictures();
   }
 
-  searchForPictures(query='sunsets'){
-    this.flickr.query=query;
-    axios.get(`${this.apicall}`)
+  searchForPictures(query){
+    if (query) {
+      this.flickr.query=query;
+    }
+    let apicall = `${this.flickr.method}${this.flickr.apikey}${this.flickr.search}${this.flickr.query}${this.flickr.options}`;
+    axios.get(`${apicall}`)
       .then(response => {
         this.setState({
           flickrData: response.data,
+          query: query,
           loading: false
         });
-        console.log(this.state.flickrData);
+        console.log(this.state);
       })
       .catch(error => {
         console.log('Error fetching and parsing data', error);
@@ -75,18 +80,12 @@ export default class App extends Component {
                            photos={this.state.flickrData.photos.photo}
                          />}
                 />
-                <Route path='/gallery'
-                        render={(props) =>
-                         <Gallery {...props}
-                           flickr={this.flickr}
-                           photos={this.state.flickrData.photos.photo}
-                         />}
-                />
                 <Route path='/search'
                         render={(props) =>
                          <SearchForm {...props}
                            flickr={this.flickr}
                            apicall={this.apicall}
+                           onSearch={this.searchForPictures}
                            photos={this.state.flickrData.photos.photo}
                          />}
                 />
