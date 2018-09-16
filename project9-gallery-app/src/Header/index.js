@@ -1,10 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-import SearchForm from './Search';
-
-class Header extends Component {
-  render(){
-    return (
+const Header = () =>
       <nav className="main-nav">
         <ul>
           <li><a href='/gallery/Cats'>Cats</a></li>
@@ -12,8 +8,6 @@ class Header extends Component {
           <li><a href='/gallery/Computers'>Computers</a></li>
           <li><a href='/search'>Search</a></li>
         </ul>
-      </nav>);
-  }
-};
+      </nav>;
 
 export default Header

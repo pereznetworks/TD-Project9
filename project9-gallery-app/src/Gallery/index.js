@@ -4,22 +4,27 @@ import NotFound from './NotFound';
 
 const Gallery = props => {
 
-  let photos;
+  let photosImgLi;
 
-  console.log(this.props.pictures);
-
-  if (this.props.pictures.length > 0) {
-    photos = this.props.pictures.map(photo =><ImgLi key={photo.id} owner={photo.owner} flickr={this.props.flickr}/>);
+  if (props.photos.length > 0) {
+    photosImgLi = props.photos.map(photo =>
+      <ImgLi
+        key={photo.id}
+        farm={photo.farm}
+        serverId={photo.server}
+        photoId={photo.id}
+        secret={photo.secret}
+        flickr={props.flickr}/>);
   } else {
-    photos = <NotFound />;
+    photosImgLi = <NotFound />;
   }
 
   return <div className="photo-container">
       <h2>Results</h2>
       <ul>
-        {photos}
+        {photosImgLi}
       </ul>
     </div>;
-}
+};
 
 export default Gallery;

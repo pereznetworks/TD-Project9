@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import axios from 'axios';
 
 /** styling **/
@@ -19,13 +19,17 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      pictures: [],
+      flickrData: {},
       loading: true
     };
     this.flickr = {
-      weburl: 'https://www.flickr.com/photos',
-      ownerid: '/',
-      photoid: '/',
+      weburl: 'https://farm',
+      farm: '2',
+      urlDomain: '.staticflickr.com/',
+      serverId: '1234/',
+      photoId: '43793268375_',
+      secret: 'c8a11ce332',
+      sizeSuffix: '.jpg',
       apikey: Api.key,
       method: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=',
       options: '&per_page=24&format=json&nojsoncallback=1',
@@ -44,10 +48,10 @@ export default class App extends Component {
     axios.get(`${this.apicall}`)
       .then(response => {
         this.setState({
-          pictures: response.data,
+          flickrData: response.data,
           loading: false
         });
-        console.log(this.state.pictures);
+        console.log(this.state.flickrData);
       })
       .catch(error => {
         console.log('Error fetching and parsing data', error);
@@ -56,28 +60,40 @@ export default class App extends Component {
 
   render() {
     console.log(this.apicall);
-    console.log(this.state.pictures);
+    console.log(this.state.flickrData);
+
     return (
-      <BrowserRouter>
-        <div className="container">
+      (this.state.loading)
+      ? <div className="container">Loading...</div>
+        : <BrowserRouter>
+            <div className="container">
+              <Switch>
                 <Route exact path='/'
-                    component={Header}
-                    onSearch={this.searchForPictures}
-                    flickr={this.flickr}
-                    pictures={this.state.pictures.photo}
-                    apicall={this.apicall}/>
-                <Route path='/search' component={SearchForm}/>
+                        render={(props) =>
+                         <Header {...props}
+                           flickr={this.flickr}
+                           photos={this.state.flickrData.photos.photo}
+                         />}
+                />
                 <Route path='/gallery'
-                      component={Gallery}
-                      pictures={this.state.pictures.photo}
-                      flickr={this.flickr}
-                      apicall={this.apicall}
-                  />
-
+                        render={(props) =>
+                         <Gallery {...props}
+                           flickr={this.flickr}
+                           photos={this.state.flickrData.photos.photo}
+                         />}
+                />
+                <Route path='/search'
+                        render={(props) =>
+                         <SearchForm {...props}
+                           flickr={this.flickr}
+                           apicall={this.apicall}
+                           photos={this.state.flickrData.photos.photo}
+                         />}
+                />
                 <Route component={NotFound}/>
-        </div>
-      </BrowserRouter>
-    );
-  }
-
+              </Switch>
+            </div>
+         </BrowserRouter>
+      );
+   }
 }

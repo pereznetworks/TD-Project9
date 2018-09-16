@@ -1,8 +1,11 @@
 import React from 'react';
 
 const ImgLi = props =>  {
+
+  let apiCall = `${props.flickr.weburl}${props.farm}${props.flickr.urlDomain}${props.serverId}/${props.photoId}_${props.secret}${props.flickr.sizeSuffix}`;
+
   return <li >
-    <img src={`${this.props.flickr.weburl}${this.props.owner}${this.props.key}`} alt=""/>
+    <img src={apiCall} alt=""/>
   </li>;
 }
 
