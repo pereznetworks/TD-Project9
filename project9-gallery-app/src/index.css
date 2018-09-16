@@ -93,6 +93,22 @@ input {
   width: 100%;
 }
 
+.nav-button {
+  font-size: 1em;
+  width: 150px;
+  margin: 0;
+  text-align: center;
+  background: #438bbd;
+  border-radius: 3px;
+  padding: 15px;
+  color: #fff;
+}
+
+.nav-button .active,
+.nav-button a:hover {
+  background-color: #275270;
+}
+
 @media only screen and (max-width: 767px)  {
   body {
     padding-top: 2em;

@@ -22,7 +22,7 @@ export default class App extends Component {
       query: '',
       loading: true
     };
-    this.searchForPictures = this.searchForPictures.bind(this),
+    this.searchForPictures = this.searchForPictures.bind(this);
     this.flickr = {
       weburl: 'https://farm',
       farm: '2',
