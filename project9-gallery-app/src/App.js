@@ -92,6 +92,15 @@ export default class App extends Component {
                            photos={this.state.flickrData.photos.photo}
                          />}
                 />
+                <Route
+                  path="/:query"
+                          render={(props) =>
+                           <Header {...props}
+                             flickr={this.flickr}
+                             photos={this.state.flickrData.photos.photo}
+                             onSearch={this.searchForPictures}
+                           />}
+                />
                 <Route component={NotFound}/>
               </Switch>
             </div>

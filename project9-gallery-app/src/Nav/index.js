@@ -1,31 +1,16 @@
-import React from 'react';
+import React from "react";
 
 const Nav = (props) => {
 
-  let query;
-
-  const navFind = (e) =>{
-    query = e.target.textContent
-    props.onSearch(query);
-  }
-
   return (<nav className="main-nav">
     <ul>
-      <li><a
-              href='/'
-              onClick={navFind}
-              >Cats</a>
+      <li><a href='/cats'>Cats</a>
       </li>
-      <li><a
-              href='/'
-              onClick={navFind}>Dogs</a>
+      <li><a href='/dogs'>Dogs</a>
       </li>
-      <li><a
-              href='/'
-              onClick={navFind}>Computers</a>
+      <li><a href='/computers'>Computers</a>
       </li>
-      <li><a
-        href='/search'>Search</a>
+      <li><a href='/search'>Search</a>
       </li>
     </ul>
   </nav>)
