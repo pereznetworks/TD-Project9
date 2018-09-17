@@ -12,7 +12,7 @@ const Header = (props ) => {
 
     return (<div>
       <h2>Flickr Photo Gallery</h2>
-      <Nav onSearch={props.onSearch}/>
+      <Nav/>
       <div className="photo-container">
         <ul>
           <Gallery {...props}
