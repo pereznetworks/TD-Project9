@@ -10,8 +10,8 @@ import Api from './Flickr/config.js';
 
 /** modular components **/
 import Header from './Header';
-import SearchForm from './Header/Search';
-import NotFound from './Gallery/NotFound';
+import SearchForm from './Search';
+import NotFound from './NotFound';
 
 export default class App extends Component {
 
