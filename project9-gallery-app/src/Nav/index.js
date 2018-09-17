@@ -4,11 +4,11 @@ const Nav = (props) => {
 
   return (<nav className="main-nav">
     <ul>
-      <li><a href='/Hippopotamus'>Hippopotamus</a>
+      <li><a href='/navlink/Hippopotamus'>Hippopotamus</a>
       </li>
-      <li><a href='/eagles'>Eagles</a>
+      <li><a href='/navlink/eagles'>Eagles</a>
       </li>
-      <li><a href='/horses'>Horses</a>
+      <li><a href='/navlink/horse'>Horses</a>
       </li>
       <li><a href='/search'>Search</a>
       </li>

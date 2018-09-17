@@ -5,7 +5,7 @@ import Gallery from '../Gallery'
 const Header = (props ) => {
 
     if (props.match.params.query){
-      let query = props.match.params.query;
+      let query = props.query;
       props.onSearch(query);
     }
 

@@ -48,7 +48,7 @@ export default class App extends Component {
     if (query) {
       this.flickr.query=query;
     } else {
-      this.flickr.query='sunsets';
+      this.flickr.query='glacier';
     }
     let apicall = `${this.flickr.method}${this.flickr.apikey}${this.flickr.search}${this.flickr.query}${this.flickr.options}`;
     axios.get(`${apicall}`)
@@ -93,9 +93,10 @@ export default class App extends Component {
                          />}
                 />
                 <Route
-                  path="/:query"
+                  path="/navlink/:query"
                           render={(props) =>
                            <Header {...props}
+                             query={props.match.params.query}
                              flickr={this.flickr}
                              photos={this.state.flickrData.photos.photo}
                              onSearch={this.searchForPictures}
