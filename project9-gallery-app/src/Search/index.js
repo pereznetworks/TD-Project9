@@ -20,7 +20,7 @@ const SearchForm = props => {
             <Header />
             <div className="photo-container">
             <form className="search-form" onSubmit={onSearchSubmit}>
-              <a className='nav-button' href='/'>Home</a>
+              <a className='home-button' href='/'>Home</a>
               <input
                 type="search"
                 onChange={onInputChange}

@@ -21,6 +21,7 @@ a {
 
 .search-form {
   max-width: 460px;
+  height: 30px;
   display: flex;
   margin: 20px auto 32px;
 }
@@ -61,9 +62,11 @@ input {
 }
 
 .main-nav .active,
-.main-nav a:hover,
+.main-nav a:hover{
+  background-color: #800080;
+}
 .search-form button:hover {
-  background-color: #275270;
+  background-color: #800080;
 }
 
 .photo-container ul {
@@ -95,20 +98,22 @@ input {
   width: 100%;
 }
 
-.nav-button {
+.search-form a {
   font-size: 1em;
-  width: 150px;
-  margin: 0;
-  text-align: center;
+  width: 165px;
+  padding: 20px;
+  display: block;
   background: #438bbd;
   border-radius: 3px;
-  padding: 15px;
+  padding: 7px;
   color: #fff;
 }
 
-.nav-button .active,
-.nav-button a:hover {
-  background-color: #275270;
+.sarch-form a.active, .search-form a:hover {
+  background-color: #800080;
+}
+.search-button .active, .search-button a:hover {
+  background-color: #800080;
 }
 
 @media only screen and (max-width: 767px)  {
