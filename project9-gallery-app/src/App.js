@@ -36,9 +36,13 @@ export default class App extends Component {
       sizeSuffix: '.jpg',
       apikey: Api.key,
       method: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=',
-      options: '&per_page=24&format=json&nojsoncallback=1&safe_search=1',
+      options: '&safe_search=1&per_page=24&format=json&nojsoncallback=1',
       search: '&tags=',
       query: ''
+    };
+    this.contentFilters = {
+      catchHorses: /(horses)/gi,
+      justHorses: 'Appaloosa, Stallion, Castillonnais, Clydesdale, Pintabian'
     };
     this.counters = {
       eagle: 0,
@@ -53,8 +57,15 @@ export default class App extends Component {
   }
 
   searchForPictures(query){
+
     if (query) {
-      this.flickr.query = query;
+
+      if (query.match(this.contentFilters.catchHorses)){
+        this.flickr.query = this.contentFilters.justHorses;
+      } else {
+        this.flickr.query = query;
+      }
+
     } else {
       this.flickr.query = 'glaciers';
     }
