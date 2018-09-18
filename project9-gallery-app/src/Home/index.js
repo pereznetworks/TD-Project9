@@ -3,11 +3,7 @@ import { NavLink } from 'react-router-dom'
 import Header from '../Header';
 import Gallery from '../Gallery';
 
-const Nav = (props) => {
-
-  const onNavLinkClick = e => {
-    props.getNavlinkPhotos(e.target.textContent);
-  };
+const Home = (props) => {
 
   return (
       <div className="container">
@@ -18,13 +14,13 @@ const Nav = (props) => {
               <NavLink className="navlink" to="/">Home</NavLink>
             </li>
             <li><a
-              onClick={onNavLinkClick}>Hippopotamus</a>
+              >Hippopotamus</a>
             </li>
             <li><a
-              onClick={onNavLinkClick} >Eagles</a>
+              >Eagles</a>
             </li>
             <li><a
-              onClick={onNavLinkClick} >Horses</a>
+              >Horses</a>
             </li>
             <li><a href='/search'>Search</a>
             </li>
@@ -38,4 +34,4 @@ const Nav = (props) => {
       )
 };
 
-export default Nav
+export default Home

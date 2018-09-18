@@ -10,6 +10,7 @@ import Api from './Flickr/config.js';
 
 /** modular components **/
 import Header from './Header';
+import Home from './Home';
 import Nav from './Nav';
 import NotFound from './NotFound';
 import SearchForm from './Search';
@@ -42,7 +43,7 @@ export default class App extends Component {
     this.counters = {
       eagle: 0,
       glacier: 0,
-      horses: 0,
+      whales: 0,
       hippopotamus: 0
     }
   }
@@ -74,6 +75,25 @@ export default class App extends Component {
           });
   }
 
+  getNavlinkPhotos(navLinkLabel){
+
+    let apicall = `${this.flickr.method}${this.flickr.apikey}${this.flickr.search}${navLinkLabel}${this.flickr.options}`;
+    axios.get(apicall)
+          .then(response => {
+            this.setState({
+              navLinkData: response.data,
+              query: this.flickr.query,
+              loading: false,
+              navLinksLoaded: true
+            });
+            console.log(this.state);
+          })
+          .catch(error => {
+            console.log('Error fetching and parsing data', error);
+          });
+  }
+
+
 
   render() {
     console.log(this.apicall);
@@ -86,7 +106,7 @@ export default class App extends Component {
               <Switch>
                 <Route exact path='/'
                         render={(props) =>
-                         <Nav {...props}
+                         <Home {...props}
                            flickr={this.flickr}
                            photos={this.state.flickrData.photos.photo}
                            onSearch={this.searchForPictures}
@@ -107,8 +127,8 @@ export default class App extends Component {
                            <Header {...props}
                              navLinkLabel={props.match.params.navLinkLabel}
                              flickr={this.flickr}
-                             photos={this.state.flickrData.photos.photo}
-                             getNavlinkPhotos={this.searchForPictures}
+                             photos={this.state.navLinkData.photos.photo}
+                             getNavlinkPhotos={this.getNavlinkPhotos}
                              navCounter={this.counters}
                            />}
                 />
