@@ -3,10 +3,11 @@ import Nav from '../Nav';
 import Gallery from '../Gallery'
 
 const Header = (props ) => {
+    return <h2>Flickr Photo Gallery</h2>
+};
 
-    return (<div>
-      <h2>Flickr Photo Gallery</h2>
-      <Nav navCounter={props.navCounter}/>
+/** may not be needed...
+     const PhotoContainer = (props) => (
       <div className="photo-container">
         <ul>
           <Gallery {...props}
@@ -14,8 +15,7 @@ const Header = (props ) => {
               photos={props.photos}
           />
         </ul>
-      </div>;
-    </div>);
-}
+      </div>
+); **/
 
-export default Header
+export default Header;

@@ -19,7 +19,11 @@ const Gallery = props => {
     photosImgLi = <NotFound />;
   }
 
-  return photosImgLi;
+ return  <div className="photo-container">
+           <ul>
+             {photosImgLi}
+           </ul>
+         </div>
 };
 
 export default Gallery;

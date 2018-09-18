@@ -10,8 +10,9 @@ import Api from './Flickr/config.js';
 
 /** modular components **/
 import Header from './Header';
-import SearchForm from './Search';
+import Nav from './Nav';
 import NotFound from './NotFound';
+import SearchForm from './Search';
 
 export default class App extends Component {
 
@@ -82,11 +83,10 @@ export default class App extends Component {
       (this.state.loading)
       ? <div className="container">Loading...</div>
         : <BrowserRouter>
-            <div className="container">
               <Switch>
                 <Route exact path='/'
                         render={(props) =>
-                         <Header {...props}
+                         <Nav {...props}
                            flickr={this.flickr}
                            photos={this.state.flickrData.photos.photo}
                            onSearch={this.searchForPictures}
@@ -114,7 +114,6 @@ export default class App extends Component {
                 />
                 <Route component={NotFound}/>
               </Switch>
-            </div>
          </BrowserRouter>
       );
    }
