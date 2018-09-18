@@ -4,16 +4,23 @@ import Gallery from '../Gallery';
 
 const Nav = (props) => {
 
+  const onNavLinkClick = e => {
+    props.onSearch(e.target.textContent);
+  };
+
   return (
       <div className="container">
         <Header />
         <nav className="main-nav">
           <ul>
-            <li><a >Hippopotamus</a>
+            <li><a
+              onClick={onNavLinkClick}>Hippopotamus</a>
             </li>
-            <li><a >Eagles</a>
+            <li><a
+              onClick={onNavLinkClick} >Eagles</a>
             </li>
-            <li><a >Horses</a>
+            <li><a
+              onClick={onNavLinkClick} >Whales</a>
             </li>
             <li><a href='/search'>Search</a>
             </li>
