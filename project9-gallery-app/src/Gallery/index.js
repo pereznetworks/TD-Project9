@@ -1,6 +1,6 @@
 import React from 'react';
 import ImgLi from './ImgLi';
-import NotFound from './NotFound';
+import NotFound from '../NotFound';
 
 const Gallery = props => {
 

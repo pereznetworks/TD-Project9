@@ -19,12 +19,13 @@ export default class App extends Component {
     super();
     this.state = {
       flickrData: {},
+      navLinkData: {},
       query: '',
-      loading: true
+      loading: true,
     };
     this.searchForPictures = this.searchForPictures.bind(this);
     this.flickr = {
-      weburl: 'https://farm',
+      urlStart: 'https://farm',
       farm: '2',
       urlDomain: '.staticflickr.com/',
       serverId: '1234/',
@@ -35,9 +36,14 @@ export default class App extends Component {
       method: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=',
       options: '&per_page=24&format=json&nojsoncallback=1&safe_search=1',
       search: '&tags=',
-      query: '',
+      query: ''
     };
-    this.apicall = `${this.flickr.method}${this.flickr.apikey}${this.flickr.search}${this.flickr.query}${this.flickr.options}`;
+    this.counters = {
+      eagle: 0,
+      glacier: 0,
+      horses: 0,
+      hippopotamus: 0
+    }
   }
 
   componentDidMount() {
@@ -46,24 +52,27 @@ export default class App extends Component {
 
   searchForPictures(query){
     if (query) {
-      this.flickr.query=query;
+      this.flickr.query = query;
     } else {
-      this.flickr.query='glacier';
+      this.flickr.query = 'glaciers';
     }
+
     let apicall = `${this.flickr.method}${this.flickr.apikey}${this.flickr.search}${this.flickr.query}${this.flickr.options}`;
-    axios.get(`${apicall}`)
-      .then(response => {
-        this.setState({
-          flickrData: response.data,
-          query: query,
-          loading: false
-        });
-        console.log(this.state);
-      })
-      .catch(error => {
-        console.log('Error fetching and parsing data', error);
-      });
+    axios.get(apicall)
+          .then(response => {
+            this.setState({
+              flickrData: response.data,
+              query: this.flickr.query,
+              loading: false,
+              navLinksLoaded: true
+            });
+            console.log(this.state);
+          })
+          .catch(error => {
+            console.log('Error fetching and parsing data', error);
+          });
   }
+
 
   render() {
     console.log(this.apicall);
@@ -93,13 +102,14 @@ export default class App extends Component {
                          />}
                 />
                 <Route
-                  path="/navlink/:query"
+                  path="/navlink/:navLinkLabel"
                           render={(props) =>
                            <Header {...props}
-                             query={props.match.params.query}
+                             navLinkLabel={props.match.params.navLinkLabel}
                              flickr={this.flickr}
                              photos={this.state.flickrData.photos.photo}
-                             onSearch={this.searchForPictures}
+                             getNavlinkPhotos={this.searchForPictures}
+                             navCounter={this.counters}
                            />}
                 />
                 <Route component={NotFound}/>

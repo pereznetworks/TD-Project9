@@ -4,15 +4,9 @@ import Gallery from '../Gallery'
 
 const Header = (props ) => {
 
-    if (props.match.params.query){
-      let query = props.query;
-      props.onSearch(query);
-    }
-
-
     return (<div>
       <h2>Flickr Photo Gallery</h2>
-      <Nav/>
+      <Nav navCounter={props.navCounter}/>
       <div className="photo-container">
         <ul>
           <Gallery {...props}
