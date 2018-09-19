@@ -12,7 +12,7 @@ const ImgFullScreen = props =>  {
      photo = props.flickrData.photos.photo;
      backHref = '/';
   } else if (props.navLinkLabel === 'eagles') {
-     photo = props.eagle.photos.photo;
+     photo = props.eagles.photos.photo;
      backHref = `/navlink/${props.navLinkLabel}`;
   } else if (props.navLinkLabel === 'whales') {
      photo = props.whales.photos.photo;
