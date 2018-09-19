@@ -176,7 +176,7 @@ a.active {
         }
 
         .photo-fullScreen img:hover {
-          transform: scale(1.65);
+          transform: scale(1.8);
         }
 
         .photo-fullScreen a {

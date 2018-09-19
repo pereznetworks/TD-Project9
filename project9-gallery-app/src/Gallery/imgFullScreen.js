@@ -8,6 +8,7 @@ const ImgFullScreen = props =>  {
   let photo;
   let backHref;
 
+
   if (props.navLinkLabel === 'home'){
      photo = props.flickrData.photos.photo;
      backHref = '/';
@@ -20,6 +21,11 @@ const ImgFullScreen = props =>  {
   } else if (props.navLinkLabel === 'hippopotamus') {
      photo = props.hippopotamus.photos.photo;
      backHref = `/navlink/${props.navLinkLabel}`;
+  } else if (props.navLinkLabel === 'search'){
+     photo = props.flickrData.photos.photo;
+     backHref = `/search`;
+
+
   }
 
   let fullScreenSrcUrl =`${props.flickr.urlStart}${props.farm}${props.flickr.urlDomain}${props.serverId}/${props.selectedPhotoId}_${props.selectedPhotoSecret}${props.flickr.imgFormatLargeSize}`;

@@ -199,6 +199,7 @@ export default class App extends Component {
                           render={(props) =>     // uses the :navLinkLabel parameter
                            <ImgFullScreen {...props}       // to load the photos associated wih the navlink clicked
                              navLinkLabel={props.match.params.navLinkLabel}
+                             callingModule={props.callingModule}
                              farm={props.match.params.farm}
                              serverId={props.match.params.serverId}
                              selectedPhotoId={props.match.params.selectedPhotoId}

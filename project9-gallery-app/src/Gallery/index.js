@@ -13,6 +13,7 @@ const Gallery = (props) => {
     photosImgLi = props.photos.map(photo =>
       <ImgLi
         navLinkLabel={props.navLinkLabel}
+        callingModule={props.callingModule}
         key={photo.id}
         farm={photo.farm}
         serverId={photo.server}

@@ -37,6 +37,7 @@ const Home = (props) => {
         </nav>
         <Gallery
           navLinkLabel='home'
+          callingModule={props.callingModule}
           flickr={props.flickr}
           photos={props.photos}
          />
