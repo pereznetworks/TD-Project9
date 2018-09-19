@@ -52,6 +52,7 @@ const Nav = (props) => {
         </nav>
         <Gallery
           callingModule={callingModule}
+          navLinkLabel={props.navLinkLabel}
           flickr={props.flickr}
           photos={photosToDisplay}
          />

@@ -11,6 +11,7 @@ import Api from './Flickr/config.js';
 /** modular components **/
 import Home from './Home';
 import Nav from './Nav';
+import ImgFullScreen from './Gallery/imgFullScreen';
 import NotFound from './NotFound';
 import SearchForm from './Search';
 
@@ -37,15 +38,19 @@ export default class App extends Component {
     this.searchForPictures = this.searchForPictures.bind(this);
 
     // object for flickr apicall and photo src url snippets and options
+    // listed in order of appearance for correct url syntax
     this.flickr = {
+      // photo src url: items listed in order of appearance for correct url syntax
       urlStart: 'https://farm',
       farm: '2',
       urlDomain: '.staticflickr.com/',
       serverId: '1234/',
       photoId: '43793268375_',
       secret: 'c8a11ce332',
-      sizeSuffix: '.jpg',
+      imgFormatNoSize: '.jpg',
+      imgFormatLargeSize: '.jpg',  // using this for the full-screen view
       apikey: Api.key,
+      // api-call url + method + options: listed in order of appearance for correct url syntax
       method: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=',
       options: '&safe_search=1&per_page=24&format=json&nojsoncallback=1',
       search: '&tags=',
@@ -179,11 +184,27 @@ export default class App extends Component {
                          />}
                 />
                 <Route
-                  path="/navlink/:navLinkLabel"  // route to load the navlink photos
+                  exact path="/navlink/:navLinkLabel"  // route to load the navlink photos
                           render={(props) =>     // uses the :navLinkLabel parameter
                            <Nav {...props}       // to load the photos associated wih the navlink clicked
                              navLinkLabel={props.match.params.navLinkLabel}
                              flickr={this.flickr}
+                             eagles={this.state.eagles}
+                             whales={this.state.whales}
+                             hippopotamus={this.state.hippopotamus}
+                           />}
+                />
+                <Route
+                  path="/navlink/:navLinkLabel/:farm/:serverId/:selectedPhotoId/:selectedPhotoSecret"  // route to load the navlink photos
+                          render={(props) =>     // uses the :navLinkLabel parameter
+                           <ImgFullScreen {...props}       // to load the photos associated wih the navlink clicked
+                             navLinkLabel={props.match.params.navLinkLabel}
+                             farm={props.match.params.farm}
+                             serverId={props.match.params.serverId}
+                             selectedPhotoId={props.match.params.selectedPhotoId}
+                             selectedPhotoSecret={props.match.params.selectedPhotoSecret}
+                             flickr={this.flickr}
+                             flickrData={this.state.flickrData}
                              eagles={this.state.eagles}
                              whales={this.state.whales}
                              hippopotamus={this.state.hippopotamus}

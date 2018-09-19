@@ -49,6 +49,7 @@ const SearchForm = props => {
             </form>
             <ul>
               <Gallery {...props}
+                  navLinkLabel='home'
                   callingModule={callingModule}
                   flickr={props.flickr}
                   photos={props.photos}

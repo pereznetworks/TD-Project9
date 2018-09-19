@@ -12,6 +12,7 @@ const Gallery = (props) => {
   if (props.photos.length > 0) {
     photosImgLi = props.photos.map(photo =>
       <ImgLi
+        navLinkLabel={props.navLinkLabel}
         key={photo.id}
         farm={photo.farm}
         serverId={photo.server}

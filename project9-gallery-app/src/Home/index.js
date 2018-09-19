@@ -36,6 +36,7 @@ const Home = (props) => {
             </ul>
         </nav>
         <Gallery
+          navLinkLabel='home'
           flickr={props.flickr}
           photos={props.photos}
          />

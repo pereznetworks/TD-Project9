@@ -64,6 +64,7 @@ a {
           .search-form a:active, .search-form a:hover {
             background-color: #800080;
           }
+
 .main-nav li {
   width: 100%;
   margin-bottom: 1em;
@@ -71,6 +72,7 @@ a {
 
     .main-nav a, .navlink {
       width: 100px;
+      margin: auto;
       padding: 20px;
       display: block;
       background: #438bbd;
@@ -148,6 +150,49 @@ a {
 a.active {
   background-color: #800080;
 }
+
+.photo-fullScreen{
+  width: 100%;
+}
+
+  .photo-fullScreen ul {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+    .photo-fullScreen ul li {
+      width: 80%;
+      height: 80%;
+      margin-bottom: 15px;
+      align-content: center;
+    }
+
+        .photo-fullScreen ul img {
+          margin: 20%;
+          width: 60%;
+          transform: scale(1.25, 1.25);
+          transition: transform 1.25s;
+        }
+
+        .photo-fullScreen li:hover img {
+          transform: scale(1.8);
+        }
+
+        .photo-fullScreen a {
+          width: 100px;
+          margin: auto;
+          padding: 20px;
+          display: block;
+          background: #438bbd;
+          border-radius: 3px;
+          padding: 5px;
+          color: #fff;
+        }
+
+        .photo-fullScreen a:hover {
+          background-color: #800080;
+        }
 
 @media only screen and (max-width: 767px)  {
   body {
