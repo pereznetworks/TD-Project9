@@ -5,6 +5,11 @@ import Gallery from '../Gallery';
 
 const Home = (props) => {
 
+// returning the nav links bar and search button
+// navlinks point to the nav route with a parameter
+
+// search nav links points, loads search route and component
+
   return (
       <div className="container">
         <Header />

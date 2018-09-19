@@ -7,16 +7,27 @@ const SearchForm = props => {
   let query = '';
   let callingModule = 'Search';
 
+  // onChange event function, used inconjuction with ref
+  // to assign typed input to query variable
   const onInputChange = e => {
     props.flickr.query = e.target.value;
   };
 
+  // onSubmit event function, makes the call to search flickr
+  // resets the input field
   const onSearchSubmit = e => {
     e.preventDefault();
     props.onSearch(query.value);
     e.currentTarget.reset();
   };
 
+  // the terciary test at beginging of app.js render method
+  // allows for a 'loading...' screen to display breifly when search form loads
+  // or when the search results take a little longer to load
+
+  // once a search returns results, these are passed to the gallery component
+
+  // returning the search form and the gallery component...
   return <div className="container">
             <Header />
             <div className="photo-container">

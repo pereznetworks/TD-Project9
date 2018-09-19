@@ -8,6 +8,9 @@ const Nav = (props) => {
   let photosToDisplay;
   let callingModule = 'NavLinks';
 
+  // checking which navLinkLabel was clicked
+  // getting that set of photos
+
   if (props.navLinkLabel === 'eagles'){
     photosToDisplay = props.eagles.photos.photo;
   } else if (props.navLinkLabel === 'whales'){
@@ -16,6 +19,12 @@ const Nav = (props) => {
     photosToDisplay = props.hippopotamus.photos.photo;
   }
 
+  // returning the nav links bar and gallery component
+  // gallery component is passed requested navlink photos to display
+
+  // navlinks point to a the nav route with a parameter
+
+  // active navlink styled with different background color
   return (
       <div className="container">
         <Header />

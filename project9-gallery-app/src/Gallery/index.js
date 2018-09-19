@@ -4,11 +4,11 @@ import NotFound from '../NotFound';
 import NoResults from '../NotFound/NoResults';
 
 
-
 const Gallery = (props) => {
 
   let photosImgLi;
 
+  // mapping through photo and creates an li for each photo
   if (props.photos.length > 0) {
     photosImgLi = props.photos.map(photo =>
       <ImgLi
@@ -25,12 +25,13 @@ const Gallery = (props) => {
                   </ul>
                 </div>
 
-  } else if (props.callingModule === 'Search'){
 
+  } else if (props.callingModule === 'Search'){
+    // if calling module is from 'search', display ...
         return  <NoResults />;
 
-  } else if (props.callingModule === 'NavLinks'){
-
+  } else {
+    // if calling module is from any other display ...
         return  <NotFound />;
 
   }

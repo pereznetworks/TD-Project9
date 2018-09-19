@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from '../Header';
 
+// used as custom a 404 page not found error
+
 const NotFound = () => (
   <div className="not-found">
     <Header />

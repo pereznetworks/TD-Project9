@@ -14,23 +14,29 @@ import Nav from './Nav';
 import NotFound from './NotFound';
 import SearchForm from './Search';
 
+
 export default class App extends Component {
 
   constructor() {
     super();
     this.state = {
-      flickrData: {},
-      eagles: {},
-      hippopotamus: {},
-      whales: {},
-      query: '',
-      loading: true,
-      eaglesLoaded: false,
+      flickrData: {}, //storing flickr search json photo data
+      eagles: {},       // these 3, eagles, hippos, and whasles ....
+      hippopotamus: {},   // are the navlink ...
+      whales: {},     // json data objects
+      query: '',  // used to store the search form input
+      loading: true, // is false when initial default search results data is stored
+      eaglesLoaded: false, // these last 3 are true when navLink photo data is  stored
       whalesLoaded: false,
       hippopotamusLoaded: false
     };
+
+    // bind the searchForPictures function to 'this'
+    // so that when search and nav components...
+    // make api calls to flickr, can also setState using this.setState()
     this.searchForPictures = this.searchForPictures.bind(this);
 
+    // object for flickr apicall and photo src url snippets and options
     this.flickr = {
       urlStart: 'https://farm',
       farm: '2',
@@ -45,12 +51,17 @@ export default class App extends Component {
       search: '&tags=',
       query: ''
     };
+
+    // a custom content filter to cover an edge case for...
+    // search results that dont return relevant or 'family-safe' results
     this.contentFilters = {
       catchHorses: /(horses)/gi,
       justHorses: 'Appaloosa, Stallion, Castillonnai, Clydesdale, Pintabian'
     };
   }
 
+  // when components loaded
+  // make the flickr apicalls
   componentDidMount() {
     this.searchForPictures();
     this.getEaglePhotos();
@@ -58,6 +69,7 @@ export default class App extends Component {
     this.getHippopotamusPhotos();
   }
 
+  // function to make a flickr api photo search using search form input
   searchForPictures(query){
 
     if (query) {
@@ -85,6 +97,7 @@ export default class App extends Component {
           });
   }
 
+  // getting eagle photos for the 'eagle' navlink
   getEaglePhotos(){
     let eagles = 'eagles';
     let apicall = `${this.flickr.method}${this.flickr.apikey}${this.flickr.search}${eagles}${this.flickr.options}`;
@@ -102,8 +115,8 @@ export default class App extends Component {
           });
   }
 
+  // getting whale photos for the 'whale' navlink
   getWhalePhotos(){
-
     let whales = 'whale';
     let apicall = `${this.flickr.method}${this.flickr.apikey}${this.flickr.search}${whales}${this.flickr.options}`;
     axios.get(apicall)
@@ -120,8 +133,8 @@ export default class App extends Component {
           });
   }
 
+  // getting hippopotamus photos for the 'hippopotamus' navlink
   getHippopotamusPhotos(){
-
     let hippopotamus = 'hippopotamus';
     let apicall = `${this.flickr.method}${this.flickr.apikey}${this.flickr.search}${hippopotamus}${this.flickr.options}`;
     axios.get(apicall)
@@ -138,25 +151,25 @@ export default class App extends Component {
           });
   }
 
+  // rendering the components using BrowserRouter, Switch and Route from react-router-dom
 
   render() {
-    console.log(this.apicall);
-    console.log(this.state.flickrData);
-
     return (
+      // if any of these are still loading ... show a 'loading..' screen
+      // otherwise load components by matching route path
       (this.state.loading || !this.state.eaglesLoaded || !this.state.whalesLoaded || !this.state.hippopotamusLoaded)
       ? <div className="container">Loading...</div>
         : <BrowserRouter>
               <Switch>
-                <Route exact path='/'
-                        render={(props) =>
-                         <Home {...props}
+                <Route exact path='/'             // home page route
+                        render={(props) =>        // just loads, header, nav bar, link to the search component
+                         <Home {...props}         // and default set of photos, 'glaciers'
                            flickr={this.flickr}
                            photos={this.state.flickrData.photos.photo}
                            onSearch={this.searchForPictures}
                          />}
                 />
-                <Route path='/search'
+                <Route path='/search'             // route to load search form
                         render={(props) =>
                          <SearchForm {...props}
                            flickr={this.flickr}
@@ -166,9 +179,9 @@ export default class App extends Component {
                          />}
                 />
                 <Route
-                  path="/navlink/:navLinkLabel"
-                          render={(props) =>
-                           <Nav {...props}
+                  path="/navlink/:navLinkLabel"  // route to load the navlink photos
+                          render={(props) =>     // uses the :navLinkLabel parameter
+                           <Nav {...props}       // to load the photos associated wih the navlink clicked
                              navLinkLabel={props.match.params.navLinkLabel}
                              flickr={this.flickr}
                              eagles={this.state.eagles}
