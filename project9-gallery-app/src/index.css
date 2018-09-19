@@ -95,11 +95,11 @@ input {
   transform: scale(1.65);
 }
 
-.photo-container .not-found {
+.photo-container{
   width: 100%;
 }
 
-.search-form a {
+.search-form a{
   font-size: 1em;
   width: 165px;
   padding: 20px;
@@ -110,11 +110,41 @@ input {
   color: #fff;
 }
 
-.sarch-form a.active, .search-form a:hover {
+.search-form a:active, .search-form a:hover {
   background-color: #800080;
 }
-.search-button .active, .search-button a:hover {
+
+.not-found, .no-results {
+  width: auto;
+  margin: auto;
+}
+
+.not-found a:active, .not-found a:hover {
   background-color: #800080;
+}
+
+.not-found a {
+  margin: auto;
+  font-size: 1em;
+  width: 165px;
+  padding: 20px;
+  display: block;
+  background: #438bbd;
+  border-radius: 3px;
+  padding: 7px;
+  color: #fff;
+}
+
+.no-results a {
+  margin: auto;
+  font-size: 1em;
+  width: 165px;
+  padding: 20px;
+  display: block;
+  background: #438bbd;
+  border-radius: 3px;
+  padding: 7px;
+  color: #fff;
 }
 
 @media only screen and (max-width: 767px)  {

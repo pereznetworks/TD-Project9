@@ -1,6 +1,9 @@
 import React from 'react';
 import ImgLi from './ImgLi';
 import NotFound from '../NotFound';
+import NoResults from '../NotFound/NoResults';
+
+
 
 const Gallery = (props) => {
 
@@ -15,15 +18,23 @@ const Gallery = (props) => {
         photoId={photo.id}
         secret={photo.secret}
         flickr={props.flickr}/>);
-  } else {
-    photosImgLi = <NotFound />;
+
+        return  <div className="photo-container">
+                  <ul>
+                    {photosImgLi}
+                  </ul>
+                </div>
+
+  } else if (props.callingModule === 'Search'){
+
+        return  <NoResults />;
+
+  } else if (props.callingModule === 'NavLinks'){
+
+        return  <NotFound />;
+
   }
 
- return  <div className="photo-container">
-           <ul>
-             {photosImgLi}
-           </ul>
-         </div>
 };
 
 export default Gallery;

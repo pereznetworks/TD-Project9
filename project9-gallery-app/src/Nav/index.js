@@ -6,6 +6,7 @@ import Gallery from '../Gallery';
 const Nav = (props) => {
 
   let photosToDisplay;
+  let callingModule = 'NavLinks';
 
   if (props.navLinkLabel === 'eagles'){
     photosToDisplay = props.eagles.photos.photo;
@@ -46,6 +47,7 @@ const Nav = (props) => {
           </ul>
         </nav>
         <Gallery
+          callingModule={callingModule}
           flickr={props.flickr}
           photos={photosToDisplay}
          />

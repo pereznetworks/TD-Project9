@@ -1,14 +1,13 @@
 import React from 'react';
+import Header from '../Header';
 
 const NotFound = () => (
-  <div className="photo-container">
-    <h2>Results</h2>
-    <ul>
-      <li className="not-found">
-        <h3>No Results Found</h3>
-        <p>You search did not return any results. Please try again.</p>
-      </li>
-    </ul>
+  <div className="not-found">
+    <Header />
+        <h3> Oops </h3>
+        <p> That page or path is not found </p>
+        <p> Please try again.</p>
+        <a href='/'>Home</a>
   </div>
 );
 

@@ -5,6 +5,7 @@ import Gallery from '../Gallery';
 const SearchForm = props => {
 
   let query = '';
+  let callingModule = 'Search';
 
   const onInputChange = e => {
     props.flickr.query = e.target.value;
@@ -35,9 +36,9 @@ const SearchForm = props => {
                 </svg>
               </button>
             </form>
-            <h2>Results</h2>
             <ul>
               <Gallery {...props}
+                  callingModule={callingModule}
                   flickr={props.flickr}
                   photos={props.photos}
               />
