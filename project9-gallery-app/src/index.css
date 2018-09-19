@@ -164,7 +164,7 @@ a.active {
     .photo-fullScreen ul li {
       width: 80%;
       height: 80%;
-      margin-bottom: 15px;
+      margin: 15px;
       align-content: center;
     }
 
@@ -175,8 +175,8 @@ a.active {
           transition: transform 1.25s;
         }
 
-        .photo-fullScreen li:hover img {
-          transform: scale(1.8);
+        .photo-fullScreen img:hover {
+          transform: scale(1.65);
         }
 
         .photo-fullScreen a {
