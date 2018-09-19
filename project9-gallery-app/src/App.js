@@ -9,7 +9,6 @@ import './index.css';
 import Api from './Flickr/config.js';
 
 /** modular components **/
-import Header from './Header';
 import Home from './Home';
 import Nav from './Nav';
 import NotFound from './NotFound';
@@ -21,11 +20,17 @@ export default class App extends Component {
     super();
     this.state = {
       flickrData: {},
-      navLinkData: {},
+      eagles: {},
+      hippopotamus: {},
+      whales: {},
       query: '',
       loading: true,
+      eaglesLoaded: false,
+      whalesLoaded: false,
+      hippopotamusLoaded: false
     };
     this.searchForPictures = this.searchForPictures.bind(this);
+
     this.flickr = {
       urlStart: 'https://farm',
       farm: '2',
@@ -42,18 +47,15 @@ export default class App extends Component {
     };
     this.contentFilters = {
       catchHorses: /(horses)/gi,
-      justHorses: 'Appaloosa, Stallion, Castillonnais, Clydesdale, Pintabian'
+      justHorses: 'Appaloosa, Stallion, Castillonnai, Clydesdale, Pintabian'
     };
-    this.counters = {
-      eagle: 0,
-      glacier: 0,
-      whales: 0,
-      hippopotamus: 0
-    }
   }
 
   componentDidMount() {
     this.searchForPictures();
+    this.getEaglePhotos();
+    this.getWhalePhotos();
+    this.getHippopotamusPhotos();
   }
 
   searchForPictures(query){
@@ -62,8 +64,6 @@ export default class App extends Component {
 
       if (query.match(this.contentFilters.catchHorses)){
         this.flickr.query = this.contentFilters.justHorses;
-      } else {
-        this.flickr.query = query;
       }
 
     } else {
@@ -76,8 +76,7 @@ export default class App extends Component {
             this.setState({
               flickrData: response.data,
               query: this.flickr.query,
-              loading: false,
-              navLinksLoaded: true
+              loading: false
             });
             console.log(this.state);
           })
@@ -86,16 +85,15 @@ export default class App extends Component {
           });
   }
 
-  getNavlinkPhotos(navLinkLabel){
-
-    let apicall = `${this.flickr.method}${this.flickr.apikey}${this.flickr.search}${navLinkLabel}${this.flickr.options}`;
+  getEaglePhotos(){
+    let eagles = 'eagles';
+    let apicall = `${this.flickr.method}${this.flickr.apikey}${this.flickr.search}${eagles}${this.flickr.options}`;
     axios.get(apicall)
           .then(response => {
             this.setState({
-              navLinkData: response.data,
-              query: this.flickr.query,
-              loading: false,
-              navLinksLoaded: true
+              eagles: response.data,
+              query: 'eagles',
+              eaglesLoaded: true
             });
             console.log(this.state);
           })
@@ -104,6 +102,41 @@ export default class App extends Component {
           });
   }
 
+  getWhalePhotos(){
+
+    let whales = 'whale';
+    let apicall = `${this.flickr.method}${this.flickr.apikey}${this.flickr.search}${whales}${this.flickr.options}`;
+    axios.get(apicall)
+          .then(response => {
+            this.setState({
+              whales: response.data,
+              query: 'whales',
+              whalesLoaded: true
+            });
+            console.log(this.state);
+          })
+          .catch(error => {
+            console.log('Error fetching and parsing data', error);
+          });
+  }
+
+  getHippopotamusPhotos(){
+
+    let hippopotamus = 'hippopotamus';
+    let apicall = `${this.flickr.method}${this.flickr.apikey}${this.flickr.search}${hippopotamus}${this.flickr.options}`;
+    axios.get(apicall)
+          .then(response => {
+            this.setState({
+              hippopotamus: response.data,
+              query: 'hippopotamus',
+              hippopotamusLoaded: true
+            });
+            console.log(this.state);
+          })
+          .catch(error => {
+            console.log('Error fetching and parsing data', error);
+          });
+  }
 
 
   render() {
@@ -111,7 +144,7 @@ export default class App extends Component {
     console.log(this.state.flickrData);
 
     return (
-      (this.state.loading)
+      (this.state.loading || !this.state.eaglesLoaded || !this.state.whalesLoaded || !this.state.hippopotamusLoaded)
       ? <div className="container">Loading...</div>
         : <BrowserRouter>
               <Switch>
@@ -135,12 +168,12 @@ export default class App extends Component {
                 <Route
                   path="/navlink/:navLinkLabel"
                           render={(props) =>
-                           <Header {...props}
+                           <Nav {...props}
                              navLinkLabel={props.match.params.navLinkLabel}
                              flickr={this.flickr}
-                             photos={this.state.navLinkData.photos.photo}
-                             getNavlinkPhotos={this.getNavlinkPhotos}
-                             navCounter={this.counters}
+                             eagles={this.state.eagles}
+                             whales={this.state.whales}
+                             hippopotamus={this.state.hippopotamus}
                            />}
                 />
                 <Route component={NotFound}/>

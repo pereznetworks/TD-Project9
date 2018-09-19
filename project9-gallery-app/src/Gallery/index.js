@@ -2,7 +2,7 @@ import React from 'react';
 import ImgLi from './ImgLi';
 import NotFound from '../NotFound';
 
-const Gallery = props => {
+const Gallery = (props) => {
 
   let photosImgLi;
 

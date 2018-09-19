@@ -9,22 +9,29 @@ const Home = (props) => {
       <div className="container">
         <Header />
         <nav className="main-nav">
-          <ul>
-            <li>
-              <NavLink className="navlink" to="/">Home</NavLink>
-            </li>
-            <li><a
-              >Hippopotamus</a>
-            </li>
-            <li><a
-              >Eagles</a>
-            </li>
-            <li><a
-              >Horses</a>
-            </li>
-            <li><a href='/search'>Search</a>
-            </li>
-          </ul>
+            <ul>
+              <li>
+                <NavLink className="navlink" to="/">Home</NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className="navlink" to="/navlink/hippopotamus"
+                  >Hippopotamus</NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className="navlink" to="/navlink/eagles"
+                  >Eagles</NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className="navlink" to="/navlink/whales"
+                  >Whales</NavLink>
+              </li>
+              <li>
+                <a href='/search'>Search</a>
+              </li>
+            </ul>
         </nav>
         <Gallery
           flickr={props.flickr}

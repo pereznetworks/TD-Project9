@@ -61,8 +61,8 @@ input {
   color: #fff;
 }
 
-.main-nav .active,
-.navlink .active,
+.main-nav a:active,
+.navlink a:active,
 .main-nav a:hover{
   background-color: #800080;
 }

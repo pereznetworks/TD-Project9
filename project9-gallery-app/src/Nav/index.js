@@ -5,9 +5,15 @@ import Gallery from '../Gallery';
 
 const Nav = (props) => {
 
-  const onNavLinkClick = e => {
-    props.getNavlinkPhotos(e.target.textContent);
-  };
+  let photosToDisplay;
+
+  if (props.navLinkLabel === 'eagles'){
+    photosToDisplay = props.eagles.photos.photo;
+  } else if (props.navLinkLabel === 'whales'){
+    photosToDisplay = props.whales.photos.photo;
+  } else if (props.navLinkLabel === 'hippopotamus'){
+    photosToDisplay = props.hippopotamus.photos.photo;
+  }
 
   return (
       <div className="container">
@@ -15,24 +21,33 @@ const Nav = (props) => {
         <nav className="main-nav">
           <ul>
             <li>
-              <NavLink className="navlink" to="/">Home</NavLink>
+              <NavLink
+                className="navlink" to="/"
+                >Home</NavLink>
             </li>
-            <li><a
-              onClick={onNavLinkClick}>Hippopotamus</a>
+            <li>
+              <NavLink
+                className="navlink" to="/navlink/hippopotamus"
+                >Hippopotamus</NavLink>
             </li>
-            <li><a
-              onClick={onNavLinkClick} >Eagles</a>
+            <li>
+              <NavLink
+                className="navlink" to="/navlink/eagles"
+                >Eagles</NavLink>
             </li>
-            <li><a
-              onClick={onNavLinkClick} >Horses</a>
+            <li>
+              <NavLink
+                className="navlink" to="/navlink/whales"
+                >Whales</NavLink>
             </li>
-            <li><a href='/search'>Search</a>
+            <li>
+              <a href='/search'>Search</a>
             </li>
           </ul>
         </nav>
         <Gallery
           flickr={props.flickr}
-          photos={props.photos}
+          photos={photosToDisplay}
          />
       </div>
       )
