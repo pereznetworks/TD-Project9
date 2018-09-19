@@ -79,7 +79,7 @@ a {
       color: #fff;
     }
 
-      .main-nav a:hover {
+      .main-nav a:hover, .active {
         background-color: #800080;
       }
 
