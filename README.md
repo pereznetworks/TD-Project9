@@ -89,10 +89,9 @@
 
                   a header component
 
-                    with a title, logo and a
-                    form sub-component
-                      with a class of  "search-form"
-                      with a search input and button
+                    with a title,
+                     loads the NavLinks
+                      with a link to load the search form
 
                   a nav component with a class of "main-nav"
                      a sub-component
@@ -118,6 +117,7 @@
                         a div with a class of 'not-found'
                           that should be hidden
                            unless no results are found
+                           or a page not found error occurs
 
       Step 4: Plan and Setup Routes
 
@@ -139,7 +139,7 @@
                   loads gallery component to show default set of sunset pics
                   but then does replace default results with search results
 
-            /gallery  : gallery
+            /nav/:navlink : loads a gallery of photos using a param
                reusable component is loaded to display pictures
                displaying photos from the nav component and search component
                used by home and search routes
@@ -147,15 +147,16 @@
             /not found  : not found
                 only displayed when no results returned or 404 page not found
 
-      Step 5: Verify flick api call is working
+      Step 5: Verify flickr api call method is working
 
-            using just both fetch and axios, am getting warnings:
+            using axios, am getting warnings:
 
               HTTP-Based Public Key Pinning is deprecated.
               Chrome 69 and later will ignore HPKP response headers.
               (Host: api.flickr.com)
 
               probably because am not using OATH sign-on
+              and not implementing TSL and other security for this project
 
             verified I am getting response in json format
 
@@ -163,16 +164,82 @@
 
               I am hard-coding the safe-search option to safe = 1
 
-      Step 6: Adjust Routes to use BrowserRouter, {match} and NavLinks
+              although I had to write a least one custom content filter ...
+              to cover one word 'innocent' search phrase...
+                that consistently yielded 'un-safe' results
 
-              but still may need to find a way to pass props
+      Step 6: Adjust Routes to use BrowserRouter, Switch, Route and NavLinks
 
-      TODO: plug the json response data into the various components
+               able to access params passed via route through props.match
 
-            so that photos display
+      Step 7: loaded default json response data and navlinlk photo data
 
-              make sure that photos do a quick zoom affect
+              the Header component is loaded by Home, Nav and Search components
 
-              just like in the app-mockup
+              on initial page load :
 
-      TODO: implement query search
+              Home page displays default photos using the Gallery component
+
+              the Navlinks point to /nav/:navlinkslabel
+                which load the nav component
+                 - which is an exact dup of the home page
+                 except the actvie nav links stays highlighted
+                 and also displays the photos using the Gallery component
+
+      Step 8: implemented a query search using the search form
+
+              makes flickr api call and...
+               loads photos using the Gallery component
+
+              a 'Home' page button load the Home page
+
+      Step 9: implement a custom 404 not found component for invalid urls
+
+               also a no results component when a search returns no photos
+
+      Step 10: fixed bugs
+
+              major bug fix: continuous api-calls
+
+                    at first, implemented nav component the same...
+                      as the search component
+                      this worked great...but....
+                      but this meant that a separate route...
+                        ugh....
+                        would not be shown for each nav link set of photos
+
+                    once I started using the route with a param
+                     /nav:navlinkslabel
+                      relying on testing for props.match.params.navlinkslabel
+                      resulted in nav component making non-stop api-calls
+
+                    other attempts resulted in reaching a max limit for
+                      setting state
+
+                    also limited by the fact the api-calls are async
+                      so have to wait for these to finish....
+                        ... before a component tries to access the data
+
+                    finally decided to load nav link photo once....
+                     after app loads components
+                      at beginning of app
+
+              styling bugs:  getting the search form and nav links ....
+                      to look more consistent
+
+              getting routes to match project requirements
+
+              really wanting to address flickr safe-search problem
+                and leaving well enough alone for now
+                  did write a custom content filter to ....
+                  start catching innocent phrases ...
+                    that might yield 'un-safe' results
+
+      TODO:  cross-browser consistency
+      
+              some of the styling appears different in Safari
+              also need to work on smart-phone sized screen
+
+              iOS, Android, Chrome on tablet, laptop and pc sized-screens ok
+
+              haven't tested Windows 10 Edge browser yet either..  

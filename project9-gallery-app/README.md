@@ -68,30 +68,29 @@
 
       STEP 4:
 
-      Setup a javascript that exports your API-KEY
+      Setup a javascript module that exports your API-KEY
 
         this projects src/app.js...
 
          will try to import the API-KEY from a javascript file, like this...
 
-`import flicker from '../Flickr/config`
+`import flickr from '../Flickr/config`
 
          this javscript file is expected to export a key in a object,
 
          the code may look like this...
 
- `
-    const Api = {key: 'yourkey',};
-    export default Api
+ `const flickr = {key: 'yourkey',};
+  export default flickr;
  `
 
-         if you do implement OATH,
+         if you DO implement OATH,
 
          you will probably will not be using a copy this repo...
 
          but if you do and are still using a copy this repo......
 
-         you should add the secret to the flickr object
+         you should add the 'secret' to the flickr object
 
          as indicate in the code snippet below
 
@@ -99,10 +98,8 @@
 
          Api.secret everywhere that it uses the Api.key
 
-
- `
-    const Api = {key: 'yourkey', secret: 'yourSecret'};
-    export default Api
+ `const Api = {key: 'yourkey', secret: 'yourSecret'};
+  export default Api
  `
 
       Step 5:
@@ -123,11 +120,24 @@
 
           plug a 'temp' API-KEY for you, to demo the api-call functionality
 
-          don't fooled ....by the demo of flickr non-sign-on methods...
+          don't fooled...
+
+          ....by the demo of flickr non-sign-on methods...
 
           you will still need your API-KEY in your app's api calls ....
 
           otherwise none of the flickr method's api calls will work
+
+          in latest verisons of Chrome an warning is logged
+
+            xhr.js:178 HTTP-Based Public Key Pinning is deprecated.
+            Chrome 69 and later will ignore HPKP response headers.
+            (Host: api.flickr.com)
+
+            this means ...
+              it's a good idea to implement security ...
+              before making this project part of a production app or service
+
 
 [To verify your flickr method api call syntax, follow this link](https://www.flickr.com/services/api/explore/flickr.photos.search)
 
@@ -140,16 +150,30 @@
           I saved a sample set of data to a json file
 
 
-[A how to piece web urls together, including image size, safe-search, # per page..](https://www.flickr.com/services/api/misc.urls.html)
+[A how to piece photo source urls together, including image size, safe-search, # per page..](https://www.flickr.com/services/api/misc.urls.html)
+
+    Warning:
+
+    I hoped to make this a 'family-friendly' photo searching app
+
+    it seems....
+      Flickr relies on photo owners and creators to...
+       tag their photos correctly
+       so the safe-search options ...
+       does not always filter out 'mature' or 'adult' content
+
+      I started writing a custom filter using regexp and string matching
+        to start catching words and phrases ...
+        that someone may innocently use
+         but seem to consistently return 'unexpected' results
 
 [Sample Photo src url, saved to json format](./src/Flickr/howTo.json)
 
 [A sample set of data set can be found here ](./src/Flickr/sample.json)
 
-
      Step 7:
 
-        If you get past 'Flicker API keys setup' steps 1-6...
+        If you get past these 'Flicker API keys setup'...
 
         then you are probably ready for a little break ...
 
