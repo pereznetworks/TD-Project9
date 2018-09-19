@@ -26,125 +26,127 @@ a {
   margin: 20px auto 32px;
 }
 
-.search-form button {
-  outline: none;
-  background-color: #438bbd;
-  border: none;
-  padding: 0px 15px;
-  border-radius: 0 0.35em 0.35em 0;
-  cursor: pointer;
-}
+    .search-form button {
+      outline: none;
+      background-color: #438bbd;
+      border: none;
+      padding: 0px 15px;
+      border-radius: 0 0.35em 0.35em 0;
+      cursor: pointer;
+    }
 
-input {
-  font-size: 1em;
-  width: 100%;
-  background-color: #edeff0;
-  padding: 10px 15px;
-  border: 3px solid #d7dbdf;
-  border-right: none;
-  border-radius: 0.35em 0 0 0.35em;
-  outline: none;
-}
+    input {
+      font-size: 1em;
+      width: 100%;
+      background-color: #edeff0;
+      padding: 10px 15px;
+      border: 3px solid #d7dbdf;
+      border-right: none;
+      border-radius: 0.35em 0 0 0.35em;
+      outline: none;
+    }
 
+        .search-form button:hover {
+          background-color: #800080;
+        }
+
+          .search-form a{
+            font-size: 1em;
+            width: 165px;
+            padding: 20px;
+            display: block;
+            background: #438bbd;
+            border-radius: 3px;
+            padding: 7px;
+            color: #fff;
+          }
+
+          .search-form a:active, .search-form a:hover {
+            background-color: #800080;
+          }
 .main-nav li {
   width: 100%;
   margin-bottom: 1em;
 }
 
-.main-nav a, .navlink {
-  width: 100px;
-  padding: 20px;
-  display: block;
-  background: #438bbd;
-  border-radius: 3px;
-  padding: 5px;
-  color: #fff;
-}
+    .main-nav a, .navlink {
+      width: 100px;
+      padding: 20px;
+      display: block;
+      background: #438bbd;
+      border-radius: 3px;
+      padding: 5px;
+      color: #fff;
+    }
 
-.main-nav a:active,
-.navlink a:active,
-.main-nav a:hover{
-  background-color: #800080;
-}
-.search-form button:hover {
-  background-color: #800080;
-}
-
-.photo-container ul {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  -ms-align-items: flex-start;
-  align-items: flex-start;
-}
-
-.photo-container ul li {
-  width: 220px;
-  height: 165px;
-  overflow: hidden;
-  margin-bottom: 15px;
-}
-
-.photo-container ul img {
-  width: 100%;
-  transform: scale(1.25);
-  transition: transform 1.25s;
-}
-
-.photo-container li:hover img {
-  transform: scale(1.65);
-}
+      .main-nav a:hover {
+        background-color: #800080;
+      }
 
 .photo-container{
   width: 100%;
 }
 
-.search-form a{
-  font-size: 1em;
-  width: 165px;
-  padding: 20px;
-  display: block;
-  background: #438bbd;
-  border-radius: 3px;
-  padding: 7px;
-  color: #fff;
-}
+  .photo-container ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    -ms-align-items: flex-start;
+    align-items: flex-start;
+  }
 
-.search-form a:active, .search-form a:hover {
-  background-color: #800080;
-}
+    .photo-container ul li {
+      width: 220px;
+      height: 165px;
+      overflow: hidden;
+      margin-bottom: 15px;
+    }
+
+        .photo-container ul img {
+          width: 100%;
+          transform: scale(1.25);
+          transition: transform 1.25s;
+        }
+
+        .photo-container li:hover img {
+          transform: scale(1.65);
+        }
 
 .not-found, .no-results {
   width: auto;
   margin: auto;
 }
 
-.not-found a:active, .not-found a:hover {
+  .not-found a {
+    margin: auto;
+    font-size: 1em;
+    width: 165px;
+    padding: 20px;
+    display: block;
+    background: #438bbd;
+    border-radius: 3px;
+    padding: 7px;
+    color: #fff;
+  }
+
+  .no-results a {
+    margin: auto;
+    font-size: 1em;
+    width: 165px;
+    padding: 20px;
+    display: block;
+    background: #438bbd;
+    border-radius: 3px;
+    padding: 7px;
+    color: #fff;
+  }
+
+    .not-found a:active, .not-found a:hover {
+      background-color: #800080;
+    }
+
+a.active {
   background-color: #800080;
-}
-
-.not-found a {
-  margin: auto;
-  font-size: 1em;
-  width: 165px;
-  padding: 20px;
-  display: block;
-  background: #438bbd;
-  border-radius: 3px;
-  padding: 7px;
-  color: #fff;
-}
-
-.no-results a {
-  margin: auto;
-  font-size: 1em;
-  width: 165px;
-  padding: 20px;
-  display: block;
-  background: #438bbd;
-  border-radius: 3px;
-  padding: 7px;
-  color: #fff;
 }
 
 @media only screen and (max-width: 767px)  {

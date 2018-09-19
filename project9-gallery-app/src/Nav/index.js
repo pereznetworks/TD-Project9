@@ -23,11 +23,6 @@ const Nav = (props) => {
           <ul>
             <li>
               <NavLink
-                className="navlink" to="/"
-                >Home</NavLink>
-            </li>
-            <li>
-              <NavLink
                 className="navlink" to="/navlink/hippopotamus"
                 >Hippopotamus</NavLink>
             </li>
