@@ -12,6 +12,7 @@ const Gallery = (props) => {
   if (props.photos.length > 0) {
     photosImgLi = props.photos.map(photo =>
       <ImgLi
+        query={props.query}
         navLinkLabel={props.navLinkLabel}
         callingModule={props.callingModule}
         key={photo.id}

@@ -11,7 +11,7 @@ import Api from './Flickr/config.js';
 /** modular components **/
 import Home from './Home';
 import Nav from './Nav';
-import ImgFullScreen from './Gallery/imgFullScreen';
+import FullScreen from './FullScreen';
 import NotFound from './NotFound';
 import SearchForm from './Search';
 
@@ -21,13 +21,15 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      flickrData: {}, //storing flickr search json photo data
+      searchData: {},
+      glaciers: {}, //storing flickr search json photo data
       eagles: {},       // these 3, eagles, hippos, and whasles ....
       hippopotamus: {},   // are the navlink ...
       whales: {},     // json data objects
       query: '',  // used to store the search form input
       loading: true, // is false when initial default search results data is stored
       eaglesLoaded: false, // these last 3 are true when navLink photo data is  stored
+      glaciersLoaded: false,
       whalesLoaded: false,
       hippopotamusLoaded: false
     };
@@ -54,6 +56,7 @@ export default class App extends Component {
       method: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=',
       options: '&safe_search=1&per_page=24&format=json&nojsoncallback=1',
       search: '&tags=',
+      previousQueryPath: ' ',
       query: ''
     };
 
@@ -70,6 +73,7 @@ export default class App extends Component {
   componentDidMount() {
     this.searchForPictures();
     this.getEaglePhotos();
+    this.getGlacierPhotos();
     this.getWhalePhotos();
     this.getHippopotamusPhotos();
   }
@@ -81,6 +85,8 @@ export default class App extends Component {
 
       if (query.match(this.contentFilters.catchHorses)){
         this.flickr.query = this.contentFilters.justHorses;
+      } else {
+        this.flickr.query = query;
       }
 
     } else {
@@ -91,11 +97,27 @@ export default class App extends Component {
     axios.get(apicall)
           .then(response => {
             this.setState({
-              flickrData: response.data,
+              searchData: response.data,
               query: this.flickr.query,
               loading: false
             });
-            console.log(this.state);
+          })
+          .catch(error => {
+            console.log('Error fetching and parsing data', error);
+          });
+  }
+
+  // getting eagle photos for the 'eagle' navlink
+  getGlacierPhotos(){
+    let glaciers = 'glaciers';
+    let apicall = `${this.flickr.method}${this.flickr.apikey}${this.flickr.search}${glaciers}${this.flickr.options}`;
+    axios.get(apicall)
+          .then(response => {
+            this.setState({
+              glaciers: response.data,
+              query: 'glaciers',
+              glaciersLoaded: true
+            });
           })
           .catch(error => {
             console.log('Error fetching and parsing data', error);
@@ -113,7 +135,6 @@ export default class App extends Component {
               query: 'eagles',
               eaglesLoaded: true
             });
-            console.log(this.state);
           })
           .catch(error => {
             console.log('Error fetching and parsing data', error);
@@ -131,7 +152,6 @@ export default class App extends Component {
               query: 'whales',
               whalesLoaded: true
             });
-            console.log(this.state);
           })
           .catch(error => {
             console.log('Error fetching and parsing data', error);
@@ -149,7 +169,6 @@ export default class App extends Component {
               query: 'hippopotamus',
               hippopotamusLoaded: true
             });
-            console.log(this.state);
           })
           .catch(error => {
             console.log('Error fetching and parsing data', error);
@@ -162,7 +181,7 @@ export default class App extends Component {
     return (
       // if any of these are still loading ... show a 'loading..' screen
       // otherwise load components by matching route path
-      (this.state.loading || !this.state.eaglesLoaded || !this.state.whalesLoaded || !this.state.hippopotamusLoaded)
+      (this.state.loading || !this.state.eaglesLoaded || !this.state.glaciersLoaded || !this.state.whalesLoaded || !this.state.hippopotamusLoaded)
       ? <div className="container">Loading...</div>
         : <BrowserRouter>
               <Switch>
@@ -170,42 +189,53 @@ export default class App extends Component {
                         render={(props) =>        // just loads, header, nav bar, link to the search component
                          <Home {...props}         // and default set of photos, 'glaciers'
                            flickr={this.flickr}
-                           photos={this.state.flickrData.photos.photo}
+                           photos={this.state.glaciers.photos.photo}
                            onSearch={this.searchForPictures}
                          />}
                 />
-                <Route path='/search'             // route to load search form
+                <Route exact path='/search'             // route to load search form
                         render={(props) =>
                          <SearchForm {...props}
                            flickr={this.flickr}
                            apicall={this.apicall}
                            onSearch={this.searchForPictures}
-                           photos={this.state.flickrData.photos.photo}
+                           photos={this.state.searchData.photos.photo}
                          />}
                 />
-                <Route
-                  exact path="/navlink/:navLinkLabel"  // route to load the navlink photos
+                <Route exact path='/search/:query'             // route to load search form
+                        render={(props) =>
+                         <SearchForm {...props}
+                           query={props.match.params.query}
+                           flickr={this.flickr}
+                           apicall={this.apicall}
+                           onSearch={this.searchForPictures}
+                           photos={this.state.searchData.photos.photo}
+                         />}
+                />
+                <Route exact path="/navlink/:navLinkLabel"  // route to load the navlink photos
                           render={(props) =>     // uses the :navLinkLabel parameter
                            <Nav {...props}       // to load the photos associated wih the navlink clicked
                              navLinkLabel={props.match.params.navLinkLabel}
                              flickr={this.flickr}
                              eagles={this.state.eagles}
+                             glaciers={this.state.glaciers}
                              whales={this.state.whales}
                              hippopotamus={this.state.hippopotamus}
                            />}
                 />
                 <Route
-                  path="/navlink/:navLinkLabel/:farm/:serverId/:selectedPhotoId/:selectedPhotoSecret"  // route to load the navlink photos
+                  path="/fullscreen/:navLinkLabel/:previousQuery/:farm/:serverId/:selectedPhotoId/:selectedPhotoSecret"  // route to load the navlink photos
                           render={(props) =>     // uses the :navLinkLabel parameter
-                           <ImgFullScreen {...props}       // to load the photos associated wih the navlink clicked
+                           <FullScreen {...props}       // to load the photos associated wih the navlink clicked
                              navLinkLabel={props.match.params.navLinkLabel}
+                             previousQuery={props.match.params.previousQuery}
                              callingModule={props.callingModule}
                              farm={props.match.params.farm}
                              serverId={props.match.params.serverId}
                              selectedPhotoId={props.match.params.selectedPhotoId}
                              selectedPhotoSecret={props.match.params.selectedPhotoSecret}
                              flickr={this.flickr}
-                             flickrData={this.state.flickrData}
+                             searchData={this.state.searchData}
                              eagles={this.state.eagles}
                              whales={this.state.whales}
                              hippopotamus={this.state.hippopotamus}

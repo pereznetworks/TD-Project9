@@ -13,6 +13,8 @@ const Nav = (props) => {
 
   if (props.navLinkLabel === 'eagles'){
     photosToDisplay = props.eagles.photos.photo;
+  } else if (props.navLinkLabel === 'glaciers'){
+    photosToDisplay = props.glaciers.photos.photo;
   } else if (props.navLinkLabel === 'whales'){
     photosToDisplay = props.whales.photos.photo;
   } else if (props.navLinkLabel === 'hippopotamus'){
@@ -30,6 +32,11 @@ const Nav = (props) => {
         <Header />
         <nav className="main-nav">
           <ul>
+            <li>
+              <NavLink
+                className="navlink" to="/navlink/glaciers"
+                >Glaciers</NavLink>
+            </li>
             <li>
               <NavLink
                 className="navlink" to="/navlink/hippopotamus"

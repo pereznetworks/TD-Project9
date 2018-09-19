@@ -17,6 +17,11 @@ const Home = (props) => {
             <ul>
               <li>
                 <NavLink
+                  className="navlink active" to="/navlink/glaciers"
+                  >Glaciers</NavLink>
+              </li>
+              <li>
+                <NavLink
                   className="navlink" to="/navlink/hippopotamus"
                   >Hippopotamus</NavLink>
               </li>

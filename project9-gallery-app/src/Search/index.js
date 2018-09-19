@@ -6,6 +6,7 @@ const SearchForm = props => {
 
   let query = '';
   let callingModule = 'Search';
+  let previousQuery = props.flickr.query
 
   // onChange event function, used inconjuction with ref
   // to assign typed input to query variable
@@ -18,6 +19,8 @@ const SearchForm = props => {
   const onSearchSubmit = e => {
     e.preventDefault();
     props.onSearch(query.value);
+    previousQuery = query.value;
+    props.flickr.previousQueryPath = `/search/${previousQuery}`;
     e.currentTarget.reset();
   };
 
@@ -49,7 +52,7 @@ const SearchForm = props => {
             </form>
             <ul>
               <Gallery {...props}
-                  query={query.value}
+                  query={previousQuery}
                   navLinkLabel='search'
                   callingModule={callingModule}
                   flickr={props.flickr}
