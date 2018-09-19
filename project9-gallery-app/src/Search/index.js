@@ -6,7 +6,7 @@ const SearchForm = props => {
 
   let query = '';
   let callingModule = 'Search';
-  let previousQuery = props.flickr.query
+  let previousQuery;
 
   // onChange event function, used inconjuction with ref
   // to assign typed input to query variable
@@ -24,13 +24,13 @@ const SearchForm = props => {
     e.currentTarget.reset();
   };
 
-  // the terciary test at beginging of app.js render method
-  // allows for a 'loading...' screen to display breifly when search form loads
-  // or when the search results take a little longer to load
+  if (props.query) {
+    previousQuery = props.query;
+    props.onSearch(props.query);
+  } else {
+    previousQuery = props.flickr.query;
+  }
 
-  // once a search returns results, these are passed to the gallery component
-
-  // returning the search form and the gallery component...
   return <div className="container">
             <Header />
             <div className="photo-container">
@@ -61,6 +61,15 @@ const SearchForm = props => {
             </ul>
           </div>
         </div>;
+
+  // the terciary test at beginging of app.js render method
+  // allows for a 'loading...' screen to display breifly when search form loads
+  // or when the search results take a little longer to load
+
+  // once a search returns results, these are passed to the gallery component
+
+  // returning the search form and the gallery component...
+
 };
 
 export default SearchForm;
