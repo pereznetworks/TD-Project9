@@ -204,13 +204,3 @@
         and the next phase..
 
         Godspeed...
-
-# TODO:
-
-    Finish this readme.md
-
-    and
-
-      find out how to get code snippet and url link markup to work with...
-
-      text that is in 'boxed' in paragraph of text ...
