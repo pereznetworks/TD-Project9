@@ -15,6 +15,7 @@ const Gallery = (props) => {
         query={props.query}
         navLinkLabel={props.navLinkLabel}
         callingModule={props.callingModule}
+        previousQuery={props.previousQuery}
         key={photo.id}
         farm={photo.farm}
         serverId={photo.server}

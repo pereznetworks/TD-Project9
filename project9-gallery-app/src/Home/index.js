@@ -5,6 +5,7 @@ import Gallery from '../Gallery';
 
 const Home = (props) => {
 
+let callingModule = 'Home';
 // returning the nav links bar and search button
 // navlinks point to the nav route with a parameter
 
@@ -41,8 +42,8 @@ const Home = (props) => {
             </ul>
         </nav>
         <Gallery
-          navLinkLabel='home'
-          callingModule={props.callingModule}
+          navLinkLabel={props.navLinkLabel}
+          callingModule={callingModule}
           flickr={props.flickr}
           photos={props.photos}
          />

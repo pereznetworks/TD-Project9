@@ -20,13 +20,11 @@ const SearchForm = props => {
     e.preventDefault();
     props.onSearch(query.value);
     previousQuery = query.value;
-    props.flickr.previousQueryPath = `/search/${previousQuery}`;
     e.currentTarget.reset();
   };
 
   if (props.query) {
     previousQuery = props.query;
-    props.onSearch(props.query);
   } else {
     previousQuery = props.flickr.query;
   }
@@ -52,8 +50,9 @@ const SearchForm = props => {
             </form>
             <ul>
               <Gallery {...props}
-                  query={previousQuery}
-                  navLinkLabel='search'
+                  query={query}
+                  navLinkLabel={previousQuery}
+                  previousQuery={previousQuery}
                   callingModule={callingModule}
                   flickr={props.flickr}
                   photos={props.photos}

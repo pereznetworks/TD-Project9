@@ -9,21 +9,21 @@ const FullScreen = props =>  {
   let backHref;
 
 
-  if (props.navLinkLabel === 'home'){
-     photo = props.searchData.photos.photo;
+  if (props.callingModule === 'Home'){
+     photo = props.glaciers.photos.photo;
      backHref = '/';
-  } else if (props.navLinkLabel === 'eagles') {
-     photo = props.eagles.photos.photo;
-     backHref = `/navlink/${props.navLinkLabel}`;
-  } else if (props.navLinkLabel === 'whales') {
-     photo = props.whales.photos.photo;
-     backHref = `/navlink/${props.navLinkLabel}`;
-  } else if (props.navLinkLabel === 'hippopotamus') {
-     photo = props.hippopotamus.photos.photo;
-     backHref = `/navlink/${props.navLinkLabel}`;
-  } else if (props.navLinkLabel === 'Search'){
+  } else if (props.callingModule === 'Search'){
      photo = props.searchData.photos.photo;
      backHref = `/search/${props.previousQuery}`;
+  } else if (props.previousQuery === 'eagles') {
+     photo = props.eagles.photos.photo;
+     backHref = `/navlink/${props.previousQuery}`;
+  } else if (props.previousQuery === 'whales') {
+     photo = props.whales.photos.photo;
+     backHref = `/navlink/${props.previousQuery}`;
+  } else if (props.previousQuery === 'hippopotamus') {
+     photo = props.hippopotamus.photos.photo;
+     backHref = `/navlink/${props.previousQuery}`;
   }
 
   let fullScreenSrcUrl =`${props.flickr.urlStart}${props.farm}${props.flickr.urlDomain}${props.serverId}/${props.selectedPhotoId}_${props.selectedPhotoSecret}${props.flickr.imgFormatLargeSize}`;

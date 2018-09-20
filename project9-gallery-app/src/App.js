@@ -188,9 +188,9 @@ export default class App extends Component {
                 <Route exact path='/'             // home page route
                         render={(props) =>        // just loads, header, nav bar, link to the search component
                          <Home {...props}         // and default set of photos, 'glaciers'
-                           flickr={this.flickr}
-                           photos={this.state.glaciers.photos.photo}
-                           onSearch={this.searchForPictures}
+                         navLinkLabel='glaciers'
+                         flickr={this.flickr}
+                         photos={this.state.glaciers.photos.photo}
                          />}
                 />
                 <Route exact path='/search'             // route to load search form
@@ -216,6 +216,7 @@ export default class App extends Component {
                           render={(props) =>     // uses the :navLinkLabel parameter
                            <Nav {...props}       // to load the photos associated wih the navlink clicked
                              navLinkLabel={props.match.params.navLinkLabel}
+                             callingModule={props.match.params.callingModule}
                              flickr={this.flickr}
                              eagles={this.state.eagles}
                              glaciers={this.state.glaciers}
@@ -229,13 +230,14 @@ export default class App extends Component {
                            <FullScreen {...props}       // to load the photos associated wih the navlink clicked
                              navLinkLabel={props.match.params.navLinkLabel}
                              previousQuery={props.match.params.previousQuery}
-                             callingModule={props.callingModule}
+                             callingModule={props.match.params.navLinkLabel}
                              farm={props.match.params.farm}
                              serverId={props.match.params.serverId}
                              selectedPhotoId={props.match.params.selectedPhotoId}
                              selectedPhotoSecret={props.match.params.selectedPhotoSecret}
                              flickr={this.flickr}
                              searchData={this.state.searchData}
+                             glaciers={this.state.glaciers}
                              eagles={this.state.eagles}
                              whales={this.state.whales}
                              hippopotamus={this.state.hippopotamus}
