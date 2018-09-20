@@ -34,7 +34,7 @@
       If you do this, you can’t go back!
 
     for complete info using the build and development work-flow
-      and bootstraping provided by Create App see the following link
+      and bootstrapping provided by Create App see the following link...
 
 [ReadMe for Create App](./CreateReactApp-README.md)
 

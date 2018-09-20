@@ -4,11 +4,14 @@
 
   If you are a Developer and/or a Team Treehouse Project Reviewer...
 
-    or just someone who dares to tinker with code in Node.js and React
+  When cloning and/or downloading this repo,
 
-    and you want to modify, build and/or run this app...
+    before running npm start...
 
-    then you are welcome to click on the link below...
+    cd to project9-gallery-app
+      this is the folder the code and npm package.json are located
+
+    Your are welcome to read the Developer-how-to using the link below...
 
   [README.MD for building and running the TD-Project9/project9-gallery-app](https://github.com/pereznetworks/TD-Project9/tree/master/project9-gallery-app)
 
@@ -63,7 +66,8 @@
 
 # Steps to Meet Project Expectations:
 
-      Step 1: Use React-Create-app to create an the build environment for the app
+      Step 1: Use React-Create-app to create ..
+       the build environment for the app
 
           Using the command:
 
@@ -87,65 +91,73 @@
 
               the app should have at least..
 
-                  a header component
+              a Home component: route '/'
+                 which loads the header, navbar, a search link
+                   and the gallery component
 
-                    with a title,
-                     loads the NavLinks
-                      with a link to load the search form
+              a Nav component: route of /navLink/:navLinkLabel
+                whose route is set to pick up a parameter, :navLinkLabel
+                also loads the header, navbar and gallery components
 
-                  a nav component with a class of "main-nav"
-                     a sub-component
-                         and a ul
-                          with 3 list items
-                          labeled Cats, Dogs, Computers
+                loads the photos associated with the :navLinkLabel that
+                    was clicked from the Home route
 
-                     a div sub-component with a class of "photo-container"
-                      the photo-container has 3 sub components
+                    so each navlink, when selected, will also show the route...
+                    in the browser address bar
 
-                        the Gallery itself
-                          the search results or photos to be displayed
-                          an h2 title
-                          demo has ul/li 4 thumbnail images
+                   the /navlinks/:navLinkLabel route will load
+                   the Nav component
+                    and then an if statement uses the :navLinkLabel param
+                        to decide which set of photos to pass to
+                          the gallery component
 
-                        a Gallery sub-component
-                          each img is displayed is an li  
-                          apparently is needs to be
-                            a single reusable component
-                            when iterating through each search result
-                              to be used to render each img  
+              a Search component: route of /search
+                 with a search form
+                    also loads the header and gallery components
+                passes the search results to the gallery component
+                  a new api call is made each time the form is submitted
 
-                        a div with a class of 'not-found'
-                          that should be hidden
-                           unless no results are found
-                           or a page not found error occurs
+
+            the Gallery itself is a re-useable component
+             with a class of "photo-container"
+              the photo-container has 3 sub components
+              the search results or photos to be displayed
+              an h2 title
+              and loads the 24 images, in the set of photo...
+                passed to it from either the Home, Nav or Search components
+
+            a GalleryItem sub-component
+              each img is displayed is an li  
+                when iterating through each search result
+                  to be used to render each img  
+
+            a component, div with a class of 'not-found'
+               if a path is invalid
+               loads a custom 'page not found' error page
+
+           a component, div with a class of 'no-Results'
+              if a search return no results
+              loads a custom 'no results' error page
 
       Step 4: Plan and Setup Routes
 
-          am a little unclear if the search form and the nav buttons
-            should be rendered on the page at the same time
+        after 4 sets of photos loaded...
 
-            / : loads the header component
-                sub components:
-                  with nav link button and a Search button
-                  may also include a logo, title, etc..
-                loads gallery component to show default set of sunset pics
+            / : loads the Home component
+                set the 'Glaciers' navlink to active
+                and show the 'Glaciers' set of photos
 
             /search : when searching for new categories of images.
-                  the search form will appear,
-                  replacing the nav component
-                  when search results are shown the nav compnent will show
-                    the button labels will change...
-                    to show the requested search categories
-                  loads gallery component to show default set of sunset pics
-                  but then does replace default results with search results
+                make an flickr api call with query set to submitted input
+                results are passed to the gallery component to be displayed
 
-            /nav/:navlink : loads a gallery of photos using a param
-               reusable component is loaded to display pictures
-               displaying photos from the nav component and search component
-               used by home and search routes
+            /nav/:navlink : loads a the nav component
+               form the home page or with-in the nav component itself...
+               the photos object associated with the selected navLink
+               are passed to the gallery component to be displayed
 
             /not found  : not found
-                only displayed when no results returned or 404 page not found
+                displays the page not found error if no matching routes
 
       Step 5: Verify flickr api call method is working
 
@@ -224,22 +236,44 @@
                      after app loads components
                       at beginning of app
 
-              styling bugs:  getting the search form and nav links ....
+              styling bugs:  getting the search form and nav links buttons....
                       to look more consistent
 
               getting routes to match project requirements
 
-              really wanting to address flickr safe-search problem
-                and leaving well enough alone for now
-                  did write a custom content filter to ....
-                  start catching innocent phrases ...
-                    that might yield 'un-safe' results
+      Step 11:  cross-browser consistency
 
-      TODO:  cross-browser consistency
-      
-              some of the styling appears different in Safari
-              also need to work on smart-phone sized screen
+              fixed some styling so the same in Safari, Chrome and Edge
+              on Windows10 and MacOS
+              used webkit-appearance to over user-stylesheet in Safari
 
-              iOS, Android, Chrome on tablet, laptop and pc sized-screens ok
+              looks good on Tablet running
+              iOS, Android, Chrome
 
-              haven't tested Windows 10 Edge browser yet either..  
+              UI is functional on iPhone and Andriod phone..
+               although would like to implement ..
+                the newer menu style used in modern web site and apps
+
+# Future Releases:
+
+          Safe-Search:
+            really wanting to address flickr safe-search problem
+              and leaving well enough alone for now
+            did write a custom content filter to ....
+              started catching innocent phrases ...
+                that might yield 'un-safe' results
+
+          Full Screen View:
+            I would like to implement a full-screen view
+            when an image is clicked in the gallery view
+             full-screen component will display the image...
+               using the entire browse window
+            there will be a next, previous to simply view those images..
+              with out going back to the gallery view
+            there will also be a 'back to the gallery component'
+              showing the same set of photos
+
+            I almost had this figured out, but have some bugs to fix before...
+              committing the changes to the master branch
+
+              also this would seem to be beyond the project speqs
