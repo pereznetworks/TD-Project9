@@ -5,15 +5,12 @@ import Gallery from '../Gallery';
 const SearchForm = props => {
 
   let query = '';
-  let callingModule = 'Search';
-  let previousQuery;
   let displayResults;
 
   // onChange event function, used inconjuction with ref
   // to assign typed input to query variable
   const onInputChange = e => {
     props.flickr.query = e.target.value;
-    previousQuery = query.value;
   };
 
   // onSubmit event function, makes the call to search flickr
@@ -25,11 +22,10 @@ const SearchForm = props => {
     displayResults = props.searchData;
   };
 
+  //  check to see if search results or default set of photos should be displayed
   if (props.flickr.query !== 'glaciers' ) {
-    previousQuery = props.flickr.query;
     displayResults = props.searchData
   } else {
-    previousQuery = props.flickr.query;
     displayResults = props.glaciers;
   }
 
@@ -53,11 +49,7 @@ const SearchForm = props => {
               </button>
             </form>
             <ul>
-              <Gallery {...props}
-                  query={query}
-                  navLinkLabel={previousQuery}
-                  previousQuery={previousQuery}
-                  callingModule={callingModule}
+              <Gallery
                   flickr={props.flickr}
                   photos={displayResults}
               />

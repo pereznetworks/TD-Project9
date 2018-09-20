@@ -1,5 +1,5 @@
 import React from 'react';
-import ImgLi from './ImgLi';
+import GalleryItem from './Gallery-Item';
 import NotFound from '../NotFound';
 import NoResults from '../NotFound/NoResults';
 
@@ -11,11 +11,7 @@ const Gallery = (props) => {
   // mapping through photo and creates an li for each photo
   if (props.photos.length > 0) {
     photosImgLi = props.photos.map(photo =>
-      <ImgLi
-        query={props.query}
-        navLinkLabel={props.navLinkLabel}
-        callingModule={props.callingModule}
-        previousQuery={props.previousQuery}
+      <GalleryItem
         key={photo.id}
         farm={photo.farm}
         serverId={photo.server}

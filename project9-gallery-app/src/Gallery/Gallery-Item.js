@@ -1,6 +1,10 @@
 import React from 'react';
 
-const ImgLi = props =>  {
+// Gallery compmnent iterates through array of photos
+// calling rendering an each photo inside ImgLi compomnent
+// photo source url used to access and display the image
+
+const GalleryItem = props =>  {
 
   let photoSrcUrl = `${props.flickr.urlStart}${props.farm}${props.flickr.urlDomain}${props.serverId}/${props.photoId}_${props.secret}${props.flickr.imgFormatNoSize}`;
 
@@ -9,4 +13,4 @@ const ImgLi = props =>  {
          </li>;
 }
 
-export default ImgLi;
+export default GalleryItem;

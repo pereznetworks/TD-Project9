@@ -6,7 +6,6 @@ import Gallery from '../Gallery';
 const Nav = (props) => {
 
   let photosToDisplay;
-  let callingModule = 'NavLinks';
 
   // checking which navLinkLabel was clicked
   // getting that set of photos
@@ -58,8 +57,6 @@ const Nav = (props) => {
           </ul>
         </nav>
         <Gallery
-          callingModule={callingModule}
-          navLinkLabel={props.navLinkLabel}
           flickr={props.flickr}
           photos={photosToDisplay}
          />
