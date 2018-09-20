@@ -6,7 +6,6 @@ import Gallery from '../Gallery';
 const Nav = (props) => {
 
   let photosToDisplay;
-
   // checking which navLinkLabel was clicked
   // getting that set of photos
 

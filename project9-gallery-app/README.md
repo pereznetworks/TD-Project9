@@ -14,6 +14,30 @@
 
     go back grasshopper, go back...
 
+# Using Create App built-in scripts:
+
+    npm start
+      Starts the development server.
+
+    npm run build
+      Bundles the app into static files for production.
+
+    npm test
+      Starts the test runner.
+
+    npm run eject
+      Removes this tool
+      copies ...
+        build dependencies,
+        configuration files
+        and scripts into the app directory.
+      If you do this, you can’t go back!
+
+    for complete info using the build and development work-flow
+      and bootstraping provided by Create App see the following link
+
+[ReadMe for Create App](./CreateReactApp-README.md)
+
 # Flicker API keys setup:
 
     To get this project up and running you will need...

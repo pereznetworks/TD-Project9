@@ -53,7 +53,7 @@ export default class App extends Component {
       apikey: Api.key,
       // api-call url + method + options: listed in order of appearance for correct url syntax
       method: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=',
-      options: '&safe_search=1&per_page=24&format=json&nojsoncallback=1',
+      options: '&relevance&safe_search=1&format=json&nojsoncallback=1',
       search: '&tags=',
       previousQueryPath: ' ',
       query: ''
@@ -123,7 +123,7 @@ export default class App extends Component {
 
   // getting eagle photos for the 'eagle' navlink
   getEaglePhotos(){
-    let eagles = 'eagles';
+    let eagles = `Bald Eagle`;
     let apicall = `${this.flickr.method}${this.flickr.apikey}${this.flickr.search}${eagles}${this.flickr.options}`;
     axios.get(apicall)
           .then(response => {
