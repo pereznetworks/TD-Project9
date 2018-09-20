@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from 'react-router-dom';
 import Header from '../Header';
 import Gallery from '../Gallery';
 import NavBar from '../Nav/NavBar';
