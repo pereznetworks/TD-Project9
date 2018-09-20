@@ -11,7 +11,6 @@ import Api from './Flickr/config.js';
 /** modular components **/
 import Home from './Home';
 import Nav from './Nav';
-import FullScreen from './FullScreen';
 import NotFound from './NotFound';
 import SearchForm from './Search';
 
@@ -84,9 +83,7 @@ export default class App extends Component {
     if (query) {
 
       if (query.match(this.contentFilters.catchHorses)){
-        this.flickr.query = this.contentFilters.justHorses;
-      } else {
-        this.flickr.query = query;
+        query = this.contentFilters.justHorses;
       }
 
     } else {
@@ -98,7 +95,7 @@ export default class App extends Component {
           .then(response => {
             this.setState({
               searchData: response.data,
-              query: this.flickr.query,
+              query: query,
               loading: false
             });
           })
@@ -196,20 +193,13 @@ export default class App extends Component {
                 <Route exact path='/search'             // route to load search form
                         render={(props) =>
                          <SearchForm {...props}
+                           defaultView='glaciers'
+                           query={this.state.query}
                            flickr={this.flickr}
                            apicall={this.apicall}
                            onSearch={this.searchForPictures}
-                           photos={this.state.searchData.photos.photo}
-                         />}
-                />
-                <Route exact path='/search/:query'             // route to load search form
-                        render={(props) =>
-                         <SearchForm {...props}
-                           query={props.match.params.query}
-                           flickr={this.flickr}
-                           apicall={this.apicall}
-                           onSearch={this.searchForPictures}
-                           photos={this.state.searchData.photos.photo}
+                           searchData={this.state.searchData.photos.photo}
+                           glaciers={this.state.glaciers.photos.photo}
                          />}
                 />
                 <Route exact path="/navlink/:navLinkLabel"  // route to load the navlink photos
@@ -220,25 +210,6 @@ export default class App extends Component {
                              flickr={this.flickr}
                              eagles={this.state.eagles}
                              glaciers={this.state.glaciers}
-                             whales={this.state.whales}
-                             hippopotamus={this.state.hippopotamus}
-                           />}
-                />
-                <Route
-                  path="/fullscreen/:navLinkLabel/:previousQuery/:farm/:serverId/:selectedPhotoId/:selectedPhotoSecret"  // route to load the navlink photos
-                          render={(props) =>     // uses the :navLinkLabel parameter
-                           <FullScreen {...props}       // to load the photos associated wih the navlink clicked
-                             navLinkLabel={props.match.params.navLinkLabel}
-                             previousQuery={props.match.params.previousQuery}
-                             callingModule={props.match.params.navLinkLabel}
-                             farm={props.match.params.farm}
-                             serverId={props.match.params.serverId}
-                             selectedPhotoId={props.match.params.selectedPhotoId}
-                             selectedPhotoSecret={props.match.params.selectedPhotoSecret}
-                             flickr={this.flickr}
-                             searchData={this.state.searchData}
-                             glaciers={this.state.glaciers}
-                             eagles={this.state.eagles}
                              whales={this.state.whales}
                              hippopotamus={this.state.hippopotamus}
                            />}

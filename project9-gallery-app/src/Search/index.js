@@ -7,11 +7,13 @@ const SearchForm = props => {
   let query = '';
   let callingModule = 'Search';
   let previousQuery;
+  let displayResults;
 
   // onChange event function, used inconjuction with ref
   // to assign typed input to query variable
   const onInputChange = e => {
     props.flickr.query = e.target.value;
+    previousQuery = query.value;
   };
 
   // onSubmit event function, makes the call to search flickr
@@ -19,14 +21,16 @@ const SearchForm = props => {
   const onSearchSubmit = e => {
     e.preventDefault();
     props.onSearch(query.value);
-    previousQuery = query.value;
     e.currentTarget.reset();
+    displayResults = props.searchData;
   };
 
-  if (props.query) {
-    previousQuery = props.query;
+  if (props.flickr.query !== 'glaciers' ) {
+    previousQuery = props.flickr.query;
+    displayResults = props.searchData
   } else {
     previousQuery = props.flickr.query;
+    displayResults = props.glaciers;
   }
 
   return <div className="container">
@@ -55,7 +59,7 @@ const SearchForm = props => {
                   previousQuery={previousQuery}
                   callingModule={callingModule}
                   flickr={props.flickr}
-                  photos={props.photos}
+                  photos={displayResults}
               />
             </ul>
           </div>
