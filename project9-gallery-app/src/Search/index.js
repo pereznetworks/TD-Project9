@@ -31,7 +31,6 @@ const SearchForm = props => {
 
   return <div className="container">
             <Header />
-            <div className="photo-container">
             <form className="search-form" onSubmit={onSearchSubmit}>
               <a className='home-button' href='/'>Home</a>
               <input
@@ -54,8 +53,7 @@ const SearchForm = props => {
                   photos={displayResults}
               />
             </ul>
-          </div>
-        </div>;
+       </div>;
 
   // the terciary test at beginging of app.js render method
   // allows for a 'loading...' screen to display breifly when search form loads

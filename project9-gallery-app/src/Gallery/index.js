@@ -20,6 +20,7 @@ const Gallery = (props) => {
         flickr={props.flickr}/>);
 
         return  <div className="photo-container">
+                  <h2>Results</h2>
                   <ul>
                     {photosImgLi}
                   </ul>
