@@ -53,7 +53,7 @@ export default class App extends Component {
       apikey: Api.key,
       // api-call url + method + options: listed in order of appearance for correct url syntax
       method: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=',
-      options: '&relevance&safe_search=1&format=json&nojsoncallback=1',
+      options: '&relevance&per_page=24&safe_search=1&format=json&nojsoncallback=1',
       search: '&tags=',
       previousQueryPath: ' ',
       query: ''
@@ -79,6 +79,8 @@ export default class App extends Component {
 
   // function to make a flickr api photo search using search form input
   searchForPictures(query){
+
+    this.setState({loading: true});
 
     if (query) {
 
@@ -178,7 +180,7 @@ export default class App extends Component {
     return (
       // if any of these are still loading ... show a 'loading..' screen
       // otherwise load components by matching route path
-      (this.state.loading || !this.state.eaglesLoaded || !this.state.glaciersLoaded || !this.state.whalesLoaded || !this.state.hippopotamusLoaded)
+      (!this.state.eaglesLoaded || !this.state.glaciersLoaded || !this.state.whalesLoaded || !this.state.hippopotamusLoaded)
       ? <div className="container">Loading...</div>
         : <BrowserRouter>
               <Switch>
@@ -194,12 +196,14 @@ export default class App extends Component {
                         render={(props) =>
                          <SearchForm {...props}
                            defaultView='glaciers'
+                           data={this.state}
                            query={this.state.query}
                            flickr={this.flickr}
                            apicall={this.apicall}
                            onSearch={this.searchForPictures}
                            searchData={this.state.searchData.photos.photo}
                            glaciers={this.state.glaciers.photos.photo}
+                           callingModule='Search'
                          />}
                 />
                 <Route exact path="/navlink/:navLinkLabel"  // route to load the navlink photos

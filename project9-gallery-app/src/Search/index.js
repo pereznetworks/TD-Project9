@@ -47,12 +47,15 @@ const SearchForm = props => {
                 </svg>
               </button>
             </form>
-            <ul>
-              <Gallery
-                  flickr={props.flickr}
-                  photos={displayResults}
-              />
-            </ul>
+              <ul>
+                {(props.data.loading ) ? <div className="container">Loading...</div>
+                  : <Gallery
+                      flickr={props.flickr}
+                      photos={displayResults}
+                      callingModule={props.callingModule}
+                    />
+                  }
+              </ul>
        </div>;
 
   // the terciary test at beginging of app.js render method
