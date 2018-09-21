@@ -8,7 +8,7 @@
 
     before running npm start...
 
-    cd to project9-gallery-app
+    `cd to project9-gallery-app`
       this is the folder the code and npm package.json are located
 
     Your are welcome to read the Developer-how-to using the link below...
@@ -20,7 +20,6 @@
     what it took to complete it
 
     then continue reading and come back to the link later...
-
 
 # Project Summary:
 
@@ -35,6 +34,36 @@
       Meeting Project Expectations...
 
       Exceeding Project Expectations...
+
+# Exceeds
+
+    I did implement the Exceeds Expectations features
+
+      A loading indicator...
+
+        A loading indicator displays each time the app is fetches new data
+          or
+        when the going back to Home from the Search page
+
+      Friendly no results page....
+
+        If no matches are found by the search,
+        a friendly user message tells the user there are no matches.
+
+      404-like page not found page...
+
+        A 404-like error route explains that
+          the URL does not match an existing route.
+
+#CSS Tweaks:
+
+      I also made some tweaks to the Search form styling so the button
+        matched the NavLink buttons
+
+       and so that the search form home, input and submit button...
+         look like 1 element
+
+       The navLink activeStyle uses `background color: #800080;`
 
 # Preparing for the project:
 
