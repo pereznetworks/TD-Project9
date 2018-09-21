@@ -9,7 +9,7 @@
     before running npm start...
 
     `cd to project9-gallery-app`
-      this is the folder the code and npm package.json are located
+      this is the folder where the code and npm package.json are located
 
     Your are welcome to read the Developer-how-to using the link below...
 
