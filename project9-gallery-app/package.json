@@ -2,6 +2,8 @@
   "name": "project9-gallery-app",
   "version": "0.1.0",
   "private": true,
+  "author": "Daniel Perez",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
     "prop-types": "^15.6.2",
