@@ -8,7 +8,7 @@
 
     .. and want to modify it, build and run their own version
 
-# Assuming you know to download and/or for a github repo...
+# Assuming you know to download and/or clone a github repo...
 
     if not do yet know how to clone or download a github repo...
 
@@ -116,11 +116,11 @@
 
          you should add the 'secret' to the flickr object
 
-         as indicate in the code snippet below
+         as indicated in the code snippet below
 
-         then make sure do into the code and make sure the app is using...
+         then make sure do add, in your app code, Api.secret
 
-         Api.secret everywhere that it uses the Api.key
+            everywhere that it uses, Api.key
 
  `const Api = {key: 'yourkey', secret: 'yourSecret'};
   export default Api
@@ -197,7 +197,7 @@
 
      Step 7:
 
-        If you get past these 'Flicker API keys setup' ...
+        If you get past the 'Flicker API keys setup' ...
 
         then you are probably ready for a little break ...
 
