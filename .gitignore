@@ -1,3 +1,6 @@
+# on macOS filesystems ignore .DS_Store
+**/.DS_Store
+
 # TD-Project9 specific directories and files
 project9-gallery-app/node_modules/
 project9-gallery-app/src/Flickr/config.js
