@@ -225,7 +225,7 @@
         
         Implement Auth and some sort of backend server 
         
-            to securely handle api calls, (this is not too hard, can axious for example) 
+            to securely handle api calls, (this is not too hard, can use axious for example) 
         
             without leaving backend sever routes exposed to the internet...
         
