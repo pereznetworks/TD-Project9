@@ -74,9 +74,9 @@
 
       STEP 3:
 
-      Decide whether you will need to use the SECRET
+      Decide whether you will need to use your FLICKR SECRET
 
-        For this project you will just need your API-KEY
+        For this project you will just need your FLICKR API-KEY
 
           The 'SECRET' is needed only when...
 
