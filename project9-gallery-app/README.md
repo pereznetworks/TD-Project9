@@ -92,13 +92,21 @@
 
       STEP 4:
 
-        This repo does not use any front-end authentication and is an experimental app only, not meant for production
+        This repo does not use any front-end authentication 
+        
+        and is an experimental app only, not meant for production
        
-            Some suggest placing your api keys in a hidden gitigonored .env file at the root of your project 
-       
-            Then in your app, import and assign it to a variable like : const myapikey = process.env.myflickerapikey
+            Some suggest placing your api keys ...
             
-                   However, in my testing as well as other's, the api key still is visible 
+            in a hidden gitigonored .env file at the root of your project 
+       
+            Then in your app, import and assign it to a variable like : 
+            
+                const myapikey = process.env.myflickerapikey
+            
+                   However, in my testing as well as other's, 
+                   
+                   the api key still is visible 
                    
                    So this is a no-go for production projects
                    
@@ -106,19 +114,27 @@
         
                 https://create-react-app.dev/docs/adding-custom-environment-variables/
         
-                WARNING: Do not store any secrets (such as private API keys) in your React app!
+                WARNING: 
+                
+                Do not store any secrets (such as private API keys) in your React app!
 
                 Environment variables are embedded into the build, 
                 
-                   ... meaning anyone can view them by inspecting your app's react code in chrome's nodejs inspector
+                   ... meaning anyone can view them by... 
+                   
+                   inspecting your app's react code in chrome's nodejs inspector
             
-         So, the solution to this is very advanced and it is more of an infrastucture implementation issue 
+         So, the solution to this is very advanced 
+         
+         and it is more of an infrastucture implementation issue 
             
             for example, many recommended that Backend server should be setup
             
                 them the backend server handles app external api calls securely
                 
-                however, front-end code in a users browser will need to access backend server routes 
+                however, front-end code in a users browser 
+                
+                will need to access to your backend server routes 
                 
                     so secure auth and encrypted communicaiton must be setup
          
