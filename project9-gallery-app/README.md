@@ -138,11 +138,13 @@
                 
                 and will need to access the backend server routes 
                 
-                    so secure auth and encrypted communicaiton must be setup
+                    so among other things....
+                    
+                        secure auth and tsl encrypted communication must be setup
          
-                         This is out of the scope of this project 
+                        This is all out of the scope of this project 
             
-         For stuff like OATH, please check other OAuth2 or other Security sources 
+         For stuff like OATH, please check OAuth2 or other Security Authentication sources 
          
       Step 5:
 
