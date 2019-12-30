@@ -2,24 +2,13 @@
 
 # Preface:
 
-  If you are a Developer and/or a Team Treehouse Project Reviewer...
+    This is a experimental project not meant for production
 
-  When cloning and/or downloading this repo,
+    If you are a Developer
 
-    before running npm start...
-
-    `cd to project9-gallery-app`
-      this is the folder where the code and npm package.json are located
-
-    Your are welcome to read the Developer-how-to using the link below...
+      Please read the Developer-how-to using the link below...
 
   [README.MD for building and running the TD-Project9/project9-gallery-app](https://github.com/pereznetworks/TD-Project9/tree/master/project9-gallery-app)
-
-  If you want to get a little background on this project and ...
-
-    what it took to complete it
-
-    then continue reading and come back to the link later...
 
 # Project Summary:
 
