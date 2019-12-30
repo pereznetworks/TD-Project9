@@ -132,9 +132,11 @@
             
                 then the backend server handles app external api calls securely
                 
-                however, front-end code in a users browser 
+                however, react app is still ...
                 
-                will need to access to your backend server routes 
+                front-end code running in a users browser 
+                
+                and will need to access to backend server routes 
                 
                     so secure auth and encrypted communicaiton must be setup
          
