@@ -231,7 +231,7 @@
 
      Step 7:
 
-        Untill I can find a solution to to following issues,
+        Until I can find a solution to to following issues,
 
             I will not be moving forward with this project
 
