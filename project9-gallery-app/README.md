@@ -239,9 +239,13 @@
 
         Implement Auth and some sort of backend server
 
-            to securely handle api calls, (this is not too hard, can use axious for example)
+            to securely handle api calls,
 
-            without leaving backend sever routes exposed to the internet...
+              (this is not too hard, can use axious for example)
+
+            without leaving backend server routes exposed to the internet...
+
+              (this is the no-so-easy-part)
 
         and feel comfortable with how flicker and other photo/image sources ...
 
