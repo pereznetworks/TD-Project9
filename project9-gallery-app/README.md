@@ -212,15 +212,23 @@
 
      Step 7:
      
-        Untill I can find a solution to to following issues, I will not be moving forward with this project
+        Untill I can find a solution to to following issues, 
+        
+            I will not be moving forward with this project
 
         If you get past the 'Flicker API keys setup' ...
         
-        implement Auth and some sort of backend server to securely handle api calls
+        Implement Auth and some sort of backend server 
         
-            without leaving backend serer routes exposed to the internet...
+            to securely handle api calls, (this is not too hard, can axious for example) 
         
-        and feel comfortable with how flicker and other photo/image soureces do/do not tag mature content properly
+            without leaving backend sever routes exposed to the internet...
+        
+        and feel comfortable with how flicker and other photo/image soureces ...
+        
+            do/do not tag mature content properly
+            
+            or have found another source of images and photos to search
 
         then you are probably ready for a little break ...
 
