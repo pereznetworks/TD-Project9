@@ -2,6 +2,10 @@
 
 # For Developers:
 
+    Please make sure to update all project deps 
+    
+        caveat: code in this repo may not work after you do update project deps
+
     This readme.md provides the basic how-to ..
 
     .. for developers who might download and/or clone this repo.
