@@ -92,43 +92,43 @@
 
       STEP 4:
 
-      Setup a javascript module that exports your API-KEY
+        This repo does not use any front-end authentication and is an experimental app only, not meant for production
+       
+            Some suggest placing your api keys in a hidden gitigonored .env file at the root of your project 
+       
+            Then in your app, import and assign it to a variable like : const myapikey = process.env.myflickerapikey
+            
+                   However, in my testing as well as other's, the api key still is visible 
+                   
+                   So this is a no-go for production projects
+                   
+            So from React documentation 
+        
+                https://create-react-app.dev/docs/adding-custom-environment-variables/
+        
+                WARNING: Do not store any secrets (such as private API keys) in your React app!
 
-        this projects src/app.js...
-
-         will try to import the API-KEY from a javascript file, like this...
-
-`import flickr from '../Flickr/config`
-
-         this javscript file is expected to export a key in a object,
-
-         the code may look like this...
-
- `const flickr = {key: 'yourkey',};
-  export default flickr;
- `
-
-         if you DO implement OATH,
-
-         you will probably will not be using a copy this repo...
-
-         but if you do and are still using a copy this repo......
-
-         you should add the 'secret' to the flickr object
-
-         as indicated in the code snippet below
-
-         then make sure do add, in your app code, Api.secret
-
-            everywhere that it uses, Api.key
-
- `const Api = {key: 'yourkey', secret: 'yourSecret'};
-  export default Api
- `
-
+                Environment variables are embedded into the build, 
+                
+                   ... meaning anyone can view them by inspecting your app's react code in chrome's nodejs inspector
+            
+         So, the solution to this is very advanced and it is more of an infrastucture implementation issue 
+            
+            for example, many recommended that Backend server should be setup
+            
+                them the backend server handles app external api calls securely
+                
+                however, front-end code in a users browser will need to access backend server routes 
+                
+                    so secure auth and encrypted communicaiton must be setup
+         
+                         This is out of the scope of this project 
+            
+         For stuff like OATH, please check other OAuth2 or other Security sources 
+         
       Step 5:
 
-      Verify the flickr api call and methods your app will need...
+      Verify the flickr api call and methods in your app will need...
 
           Using the link to flickr's api method helper...
 
@@ -176,15 +176,12 @@
 
 [A how to piece photo source urls together, including image size, safe-search, # per page..](https://www.flickr.com/services/api/misc.urls.html)
 
-    Warning:
-
-    I hoped to make this a 'family-friendly' photo searching app
+    Warning:  I hoped to make this a 'family-friendly' photo searching app
 
     it seems....
       Flickr relies on photo owners and creators to...
        tag their photos correctly
-       so the safe-search options ...
-       does not always filter out 'mature' or 'adult' content
+       so the safe-search options ...does not always filter out 'mature' or 'adult' content
 
       I started writing a custom filter using regexp and string matching
         to start catching words and phrases ...
@@ -196,8 +193,16 @@
 [A sample set of data set can be found here ](./src/Flickr/sample.json)
 
      Step 7:
+     
+        Untill I can find a solution to to following issues, I will not be moving forward with this project
 
         If you get past the 'Flicker API keys setup' ...
+        
+        implement Auth and some sort of backend server to securely handle api calls
+        
+            without leaving backend serer routes exposed to the internet...
+        
+        and feel comfortable with how flicker and other photo/image soureces do/do not tag mature content properly
 
         then you are probably ready for a little break ...
 
