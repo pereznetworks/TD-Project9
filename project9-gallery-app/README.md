@@ -122,7 +122,7 @@
                 
                    ... meaning anyone can view them by... 
                    
-                   inspecting your app's react code in chrome's nodejs inspector
+                   inspecting your app's react code in chrome's react inspector
             
          So, the solution to this is very advanced 
          
