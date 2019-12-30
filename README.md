@@ -2,7 +2,7 @@
 
 # Preface:
 
-    This is a experimental project not meant for production
+    This is a experimental project, not meant for production
 
     If you are a Developer
 
