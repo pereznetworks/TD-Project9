@@ -178,9 +178,11 @@
             Chrome 69 and later will ignore HPKP response headers.
             (Host: api.flickr.com)
 
-            this means ...
-              it's a good idea to implement security ...
-              before making this project part of a production app or service
+            this means highlights the warning on this from Step 4...
+            
+              implement, review, triple check security ...
+              
+              before going production with any app or service
 
 
 [To verify your flickr method api call syntax, follow this link](https://www.flickr.com/services/api/explore/flickr.photos.search)
