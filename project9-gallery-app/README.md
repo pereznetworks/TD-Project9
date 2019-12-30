@@ -245,7 +245,7 @@
 
             without leaving backend server routes exposed to the internet...
 
-              (this is the no-so-easy-part)
+              (this is the not-so-easy-part)
 
         and feel comfortable with how flicker and other photo/image sources ...
 
