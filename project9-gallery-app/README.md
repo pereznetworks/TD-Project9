@@ -2,8 +2,8 @@
 
 # For Developers:
 
-    Please make sure to update all project deps 
-    
+    Please make sure to update all project deps
+
         caveat: code in this repo may not work after you do update project deps
 
     This readme.md provides the basic how-to ..
@@ -68,13 +68,9 @@
 
         NOT part of your github repo
 
-        to keep the flicker api-key and it's secret - a secret ....
+        The way the api-key is imported into the react app works ....
 
-          assuming you are also using github
-
-            in .gitignore
-
-            ....make sure include a ref to the config.js file,
+          BUT IS DEFINITELY NOT FOR PRODUCTION USE - see step 4
 
       STEP 3:
 
@@ -90,66 +86,74 @@
 
             Since I dont use flickr's methods that require a sign-on...
 
-            this project does NOT implement OATH.
+            this project does NOT implement OATH on the backend or frontend
 
 [To read about, learn how your Flickr app should use OATH follow this link](https://www.flickr.com/services/api/auth.oauth.html)
 
       STEP 4:
 
-        This repo does not use any front-end authentication 
-        
+        As stated above,
+
+        this repo does not use any front-end authentication
+
         and is an experimental app only, not meant for production
-       
+
             Some suggest placing your api keys ...
-            
-            in a hidden gitigonored .env file at the root of your project 
-       
-            Then in your app, import and assign it to a variable like : 
-            
+
+            in a hidden gitignored .env file at the root of your project
+
+            Then in your app, import and assign it to a variable like :
+
                 const myapikey = process.env.myflickerapikey
-            
-                   However, in my testing as well as other's, 
-                   
-                   the api key still is visible 
-                   
+
+                   However, in my testing as well as other's,
+
+                   the api key still is visible
+
                    So this is a no-go for production projects
-                   
-            So from React documentation 
-        
+
+            So from React documentation
+
                 https://create-react-app.dev/docs/adding-custom-environment-variables/
-        
-                WARNING: 
-                
+
+                WARNING:
+
                 Do not store any secrets (such as private API keys) in your React app!
 
-                Environment variables are embedded into the build, 
-                
-                   ... meaning anyone can view them by... 
-                   
+                Environment variables are embedded into the build,
+
+                   ... meaning anyone can view them by...
+
                    inspecting your app's react code in chrome's react inspector
-            
-         So, the solution to this is very advanced 
-         
-         and it is more of an infrastucture implementation issue 
-            
+
+         So, the solution to this is very advanced
+
+         and it is more of an infrastructure implementation issue
+
             for example, many recommended that a Backend server should be setup
-            
+
                 then the backend server handles app external api calls securely
-                
-                however, react app is still ...
-                
-                front-end code running in a user's browser 
-                
-                and will need to access the backend server routes 
-                
+
+                  this is not difficult,
+
+                    for example, AXIOS does this
+
+                however, a react app is still ...
+
+                  front-end code running in a user's browser
+
+                  and will need to call the backend server routes
+
                     so among other things....
-                    
+
                         secure auth and tsl encrypted communication must be setup
-         
-                        This is all out of the scope of this project 
-            
-         For stuff like OATH, please check OAuth2 or other Security Authentication sources 
-         
+
+                        This is all out of the scope of this project
+
+         For stuff like OATH, please check OAuth2
+
+            or other Security Authentication sources
+
       Step 5:
 
       Verify the flickr api call and methods that your app will need...
@@ -183,9 +187,9 @@
             (Host: api.flickr.com)
 
             this highlights the warning on this from Step 4...
-            
+
               implement, review, triple check security ...
-              
+
               before going production with any app or service
 
 
@@ -210,9 +214,9 @@
        so the safe-search options ... frequently do not filter out 'mature' or 'adult' content
 
       I started writing a custom filter using regexp and string matching
-        
+
         to start catching words and phrases that someone may innocently use
-        
+
         but no matter how exhaustive, seems to consistently return 'unexpected' results
 
 [Sample Photo src url, saved to json format](./src/Flickr/howTo.json)
@@ -220,23 +224,23 @@
 [A sample set of data set can be found here ](./src/Flickr/sample.json)
 
      Step 7:
-     
-        Untill I can find a solution to to following issues, 
-        
+
+        Untill I can find a solution to to following issues,
+
             I will not be moving forward with this project
 
         If you get past the 'Flicker API keys setup' ...
-        
-        Implement Auth and some sort of backend server 
-        
-            to securely handle api calls, (this is not too hard, can use axious for example) 
-        
+
+        Implement Auth and some sort of backend server
+
+            to securely handle api calls, (this is not too hard, can use axious for example)
+
             without leaving backend sever routes exposed to the internet...
-        
+
         and feel comfortable with how flicker and other photo/image sources ...
-        
+
             do/do not tag mature content properly
-            
+
             or have found another source of images and photos to search
 
         then you are probably ready for a little break ...
