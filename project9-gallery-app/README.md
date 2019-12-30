@@ -128,9 +128,9 @@
          
          and it is more of an infrastucture implementation issue 
             
-            for example, many recommended that Backend server should be setup
+            for example, many recommended that a Backend server should be setup
             
-                them the backend server handles app external api calls securely
+                then the backend server handles app external api calls securely
                 
                 however, front-end code in a users browser 
                 
