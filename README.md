@@ -274,6 +274,9 @@
 
 # Future Releases:
 
+          Secure implantation
+            react front-end that securely access backend routes 
+
           Safe-Search:
             really wanting to address flickr safe-search problem
               and leaving well enough alone for now
