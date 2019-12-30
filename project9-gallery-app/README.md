@@ -209,7 +209,7 @@
         
         to start catching words and phrases that someone may innocently use
         
-        but no matter how exhsutive, seems to consistently return 'unexpected' results
+        but no matter how exhaustive, seems to consistently return 'unexpected' results
 
 [Sample Photo src url, saved to json format](./src/Flickr/howTo.json)
 
