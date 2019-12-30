@@ -203,12 +203,13 @@
     it seems....
       Flickr relies on photo owners and creators to...
        tag their photos correctly
-       so the safe-search options ...does not always filter out 'mature' or 'adult' content
+       so the safe-search options ... frequently do not filter out 'mature' or 'adult' content
 
       I started writing a custom filter using regexp and string matching
-        to start catching words and phrases ...
-        that someone may innocently use
-         but seem to consistently return 'unexpected' results
+        
+        to start catching words and phrases that someone may innocently use
+        
+        but no matter how exhsutive, seems to consistently return 'unexpected' results
 
 [Sample Photo src url, saved to json format](./src/Flickr/howTo.json)
 
