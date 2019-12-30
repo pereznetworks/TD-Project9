@@ -134,9 +134,9 @@
                 
                 however, react app is still ...
                 
-                front-end code running in a users browser 
+                front-end code running in a user's browser 
                 
-                and will need to access to backend server routes 
+                and will need to access the backend server routes 
                 
                     so secure auth and encrypted communicaiton must be setup
          
