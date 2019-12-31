@@ -8,7 +8,9 @@
 
       so quite a bit has to change
 
-      goal: all external api calls will be handled by a backend server  
+      coming soon for v2
+
+        goals, milestones and release eta
 
 # For Developers:
 
@@ -78,13 +80,11 @@
 
         NOT part of your github repo
 
-        The way the api-key is imported into the react app works ....
+        So how do I make api calls using plain React?
 
-          as long as you do the import before react loads
+        .. in short.. you dont...
 
-          or do so from as part of a backend server
-
-          BUT IS DEFINITELY NOT A GOOD IDEA - see step 4
+        see STEP 4
 
       STEP 3:
 
