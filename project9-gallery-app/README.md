@@ -64,7 +64,7 @@
 
       Place your API-KEY and associated SECRET in a safe, secure place
 
-        in your code, place it in a separate file that is....
+        NOT in your code, place it in a separate file that is....
 
         NOT part of your github repo
 
@@ -174,13 +174,15 @@
 
           don't fooled...
 
-          ....by the demo of flickr non-sign-on methods...
+          ....by the demo of flickr non-sign and sign methods...
 
-          you will still need your API-KEY in your app's api calls ....
+          you will still need your specific API-KEY in your api calls
 
           otherwise none of the flickr method's api calls will work
+          or
+          eventually flickr will block the ip address your making the api calls from
 
-          in latest verisons of Chrome an warning is logged
+          in latest verisons of Chrome the following warning is logged
 
             xhr.js:178 HTTP-Based Public Key Pinning is deprecated.
             Chrome 69 and later will ignore HPKP response headers.
