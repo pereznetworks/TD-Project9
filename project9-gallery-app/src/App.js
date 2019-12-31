@@ -1,3 +1,4 @@
+import 'process';
 import React, { Component } from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import axios from 'axios';
@@ -5,15 +6,17 @@ import axios from 'axios';
 /** styling **/
 import './index.css';
 
-/** import Flicker Api Key **/
-import Api from './Flickr/config.js';
-
 /** modular components **/
 import Home from './Home';
 import Nav from './Nav';
 import NotFound from './NotFound';
 import SearchForm from './Search';
 
+// WILL NEED TO MOVE THIS TO BACK-END SERVER
+// below is a place to put a test api key using the key embeded in test url on flickr app garden
+const API = {
+  key: ``
+}
 
 export default class App extends Component {
 
@@ -50,7 +53,7 @@ export default class App extends Component {
       secret: 'c8a11ce332',
       imgFormatNoSize: '.jpg',
       imgFormatLargeSize: '.jpg',  // using this for the full-screen view
-      apikey: Api.key,
+      apikey: API.key,
       // api-call url + method + options: listed in order of appearance for correct url syntax
       method: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=',
       options: '&relevance&per_page=24&safe_search=1&format=json&nojsoncallback=1',
@@ -178,49 +181,49 @@ export default class App extends Component {
 
   render() {
     return (
-      // if any of these are still loading ... show a 'loading..' screen
-      // otherwise load components by matching route path
-      (!this.state.eaglesLoaded || !this.state.glaciersLoaded || !this.state.whalesLoaded || !this.state.hippopotamusLoaded)
-      ? <div className="container">Loading...</div>
-        : <BrowserRouter>
-              <Switch>
-                <Route exact path='/'             // home page route
-                        render={(props) =>        // just loads, header, nav bar, link to the search component
-                         <Home {...props}         // and default set of photos, 'glaciers'
-                         navLinkLabel='glaciers'
-                         flickr={this.flickr}
-                         photos={this.state.glaciers.photos.photo}
-                         />}
-                />
-                <Route exact path='/search'             // route to load search form
-                        render={(props) =>
-                         <SearchForm {...props}
-                           defaultView='glaciers'
-                           data={this.state}
-                           query={this.state.query}
-                           flickr={this.flickr}
-                           apicall={this.apicall}
-                           onSearch={this.searchForPictures}
-                           searchData={this.state.searchData.photos.photo}
-                           glaciers={this.state.glaciers.photos.photo}
-                           callingModule='Search'
-                         />}
-                />
-                <Route exact path="/navlink/:navLinkLabel"  // route to load the navlink photos
-                          render={(props) =>     // uses the :navLinkLabel parameter
-                           <Nav {...props}       // to load the photos associated wih the navlink clicked
-                             navLinkLabel={props.match.params.navLinkLabel}
-                             callingModule={props.match.params.callingModule}
+          // if any of these are still loading ... show a 'loading..' screen
+          // otherwise load components by matching route path
+          (!this.state.eaglesLoaded || !this.state.glaciersLoaded || !this.state.whalesLoaded || !this.state.hippopotamusLoaded)
+          ? <div className="container">Loading...</div>
+            : <BrowserRouter>
+                  <Switch>
+                    <Route exact path='/'             // home page route
+                            render={(props) =>        // just loads, header, nav bar, link to the search component
+                             <Home {...props}         // and default set of photos, 'glaciers'
+                             navLinkLabel='glaciers'
                              flickr={this.flickr}
-                             eagles={this.state.eagles}
-                             glaciers={this.state.glaciers}
-                             whales={this.state.whales}
-                             hippopotamus={this.state.hippopotamus}
-                           />}
-                />
-                <Route component={NotFound}/>
-              </Switch>
-         </BrowserRouter>
-      );
+                             photos={this.state.glaciers.photos.photo}
+                             />}
+                    />
+                    <Route exact path='/search'             // route to load search form
+                            render={(props) =>
+                             <SearchForm {...props}
+                               defaultView='glaciers'
+                               data={this.state}
+                               query={this.state.query}
+                               flickr={this.flickr}
+                               apicall={this.apicall}
+                               onSearch={this.searchForPictures}
+                               searchData={this.state.searchData.photos.photo}
+                               glaciers={this.state.glaciers.photos.photo}
+                               callingModule='Search'
+                             />}
+                    />
+                    <Route exact path="/navlink/:navLinkLabel"  // route to load the navlink photos
+                              render={(props) =>     // uses the :navLinkLabel parameter
+                               <Nav {...props}       // to load the photos associated wih the navlink clicked
+                                 navLinkLabel={props.match.params.navLinkLabel}
+                                 callingModule={props.match.params.callingModule}
+                                 flickr={this.flickr}
+                                 eagles={this.state.eagles}
+                                 glaciers={this.state.glaciers}
+                                 whales={this.state.whales}
+                                 hippopotamus={this.state.hippopotamus}
+                               />}
+                    />
+                    <Route component={NotFound}/>
+                  </Switch>
+             </BrowserRouter>
+          );
    }
 }

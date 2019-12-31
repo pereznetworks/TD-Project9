@@ -54,7 +54,7 @@
 
       STEP 1:
 
-      have a yahoo acct, use it to sign in to Flickr
+      use whatever email address you want to sign-up for sign in to Flickr
 
       and go to the App Garden and apply for a non-commercial api key..
 
@@ -74,9 +74,9 @@
 
       STEP 3:
 
-      Decide whether you will need to use your FLICKR SECRET
+      Decide whether you will need to use ...
 
-        For this project you will just need your FLICKR API-KEY
+      your FLICKR SECRET and your FLICKR API-KEY
 
           The 'SECRET' is needed only when...
 

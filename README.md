@@ -71,16 +71,13 @@
 
       Got a Flickr Api Key
 
-          Logged in to Flicker, using my Yahoo acct,
+          Logged in to Flicker,
 
-          went to the Flickr's App Garden and got a non-commercial api key..
+          went to the Flickr's App Garden and got a non-commercial api key..`
 
-          placed the key in config.js that exports an object, flickr.apikey
+          -- this is being changed --- not sure how, Yet
 
-          place reference to config.js in the repo's .gitignore under...
-
-              `# TD-Project9 specific directories and files`
-              `project9-gallery-app/data/config.js`
+          -- but will somehow move api calls to a backend server
 
 # Steps to Meet Project Expectations:
 
@@ -275,7 +272,7 @@
 # Future Releases:
 
           Secure implantation
-            react front-end that securely access backend routes 
+            react front-end that securely access backend routes
 
           Safe-Search:
             really wanting to address flickr safe-search problem
