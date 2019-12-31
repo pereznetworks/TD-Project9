@@ -1,5 +1,15 @@
 # To Build and Run your own version of the TD-Project9 React Gallery App:
 
+# Project Update
+
+  This project is in the process of being re-worked
+
+    Changing from a experimental to production worthy app
+
+      so quite a bit has to change
+
+      goal: all external api calls will be handled by a backend server  
+
 # For Developers:
 
     Please make sure to update all project deps
