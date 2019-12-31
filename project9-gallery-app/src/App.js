@@ -12,8 +12,8 @@ import Nav from './Nav';
 import NotFound from './NotFound';
 import SearchForm from './Search';
 
-// WILL NEED TO MOVE THIS TO BACK-END SERVER
-// below is a place to put a test api key using the key embeded in test url on flickr app garden
+// this will not work unless you run this code before react loads
+// however, should still be done as part of backend server-side only
 const API = {
   key: process.env.FLICKR_API_KEY
 }

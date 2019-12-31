@@ -106,9 +106,14 @@
 
             in a hidden gitignored .env file at the root of your project
 
-            Then in your app, import and assign it to a variable like :
+            Then in a separate module, import and assign it to a variable like :
 
-                const myapikey = process.env.myflickerapikey
+                import 'process';
+                export default myapikey = process.env.myflickerapikey;
+
+                Then in main react app.js
+
+                   import separateModule.myapikey
 
                    However, in my testing as well as other's,
 
