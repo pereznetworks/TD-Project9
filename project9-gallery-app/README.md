@@ -70,7 +70,11 @@
 
         The way the api-key is imported into the react app works ....
 
-          BUT IS DEFINITELY NOT FOR PRODUCTION USE - see step 4
+          as long as you do the import before react loads
+
+          or do so from as part of a backend server
+
+          BUT IS DEFINITELY NOT A GOOD IDEA - see step 4
 
       STEP 3:
 

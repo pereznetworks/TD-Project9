@@ -15,8 +15,10 @@ import SearchForm from './Search';
 // WILL NEED TO MOVE THIS TO BACK-END SERVER
 // below is a place to put a test api key using the key embeded in test url on flickr app garden
 const API = {
-  key: ``
+  key: process.env.FLICKR_API_KEY
 }
+
+console.log(API.key);
 
 export default class App extends Component {
 
