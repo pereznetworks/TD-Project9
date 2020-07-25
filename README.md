@@ -256,8 +256,7 @@
 
 ## Future Releases:
 
-- Secure implantation using
-  - react front-end that securely access backend routes
+- A react front-end that securely access backend routes
 
 
 - Safe-Search that works consistently:
