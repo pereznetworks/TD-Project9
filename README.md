@@ -4,11 +4,9 @@
 
 - This project is still an experimental phase
 
-- If you are a Developer and are very brave
-  - or a glutton for punishment
-    - You can read the developer-how-to using the link below...
-
-- [For developers](https://github.com/pereznetworks/TD-Project9/tree/master/project9-gallery-app)
+- If you are a Developer and are very brave or a glutton for punishment
+  - You can read the developer-how-to using the link below...
+  - [For developers](https://github.com/pereznetworks/TD-Project9/tree/master/project9-gallery-app)
 
 ## Project Summary:
 
