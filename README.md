@@ -1,297 +1,274 @@
 # TD-Project9 - Yet Another React Gallery App
 
-# Preface:
+## Preface:
 
-    This is a experimental project, not meant for production
+- This project is still an experimental phase
 
-    If you are a Developer
+- If you are a Developer and are very brave
+  - or a glutton for punishment
+    - You can read the developer-how-to using the link below...
 
-      Please read the Developer-how-to using the link below...
+- [README.MD for building and running the TD-Project9/project9-gallery-app](https://github.com/pereznetworks/TD-Project9/tree/master/project9-gallery-app)
 
-  [README.MD for building and running the TD-Project9/project9-gallery-app](https://github.com/pereznetworks/TD-Project9/tree/master/project9-gallery-app)
+## Project Summary:
 
-# Project Summary:
+- Built as part of Team Treehouse Full-Stack Java Script Tech Degree...
 
-      As part of Team Treehouse Full-Stack Java Script Tech Degree...
+- In this project, we are challenged to create a Gallery App with React.
 
-      In this project, we are challenged to create a Gallery App with React.
+- I detail the steps I took in
+  - Preparing for the Project...
+  - Meeting Project Expectations...
+  - Exceeding Project Expectations...
 
-      I detail the steps I took in
+- eventually, I will convert this into a real app
+  - once I decide on how to tackle some implementation issues
 
-      Preparing for the Project...
+### Exceeds
 
-      Meeting Project Expectations...
+- I did implement the Exceeds Expectations features
+  - A loading indicator...
+    - that displays each time the app is fetches new data
+      or
+  - when the going back to Home from the Search page
 
-      Exceeding Project Expectations...
+- Friendly no results page....
+  - If no matches are found by the search,
+  - a friendly user message tells the user there are no matches.
 
-# Exceeds
+- A custom 404-like not found page...
+  - A 404-like error route explains that
+  - the URL does not match an existing route.
 
-    I did implement the Exceeds Expectations features
+### CSS Tweaks:
 
-      A loading indicator...
+- tweaks to the Search form styling so the button matched the NavLink buttons
 
-        A loading indicator displays each time the app is fetches new data
-          or
-        when the going back to Home from the Search page
+- styling so that the search form home, input and submit button look like 1 element
 
-      Friendly no results page....
+- The navLink activeStyle uses `background color: #800080;`
 
-        If no matches are found by the search,
-        a friendly user message tells the user there are no matches.
+### Preparing for the project:
 
-      404-like page not found page...
+### Created this GitHib repo
 
-        A 404-like error route explains that
-          the URL does not match an existing route.
+- added a section line at the top of .gitignore...
 
-#CSS Tweaks:
+  - `# TD-Project9 specific directories and files`
+  - `project9-gallery-app/node_modules/`
 
-      I also made some tweaks to the Search form styling so the button
-        matched the NavLink buttons
+- Created my documentation of Flickr's API docs
 
-       and so that the search form home, input and submit button...
-         look like 1 element
+- read and digested Flickr exhaustive API documentation
 
-       The navLink activeStyle uses `background color: #800080;`
+- saved the bits I would need and some important links
 
-# Preparing for the project:
+### Got a Flickr Api Key
 
-      Created this GitHib repo
+  - Logged in to Flicker,
 
-          added a section line at the top of .gitignore...
+  - went to the Flickr's App Garden and got a non-commercial api key..
+    -- this is being changed --- not sure how, Yet
+    -- but will somehow move api calls to a backend server
 
-            `# TD-Project9 specific directories and files`
-            `project9-gallery-app/node_modules/`
+### Steps to Meet Project Expectations:
 
-      Created my documentation of Flickr's API docs
+- So these steps dont exactly match the steps details in the developer ReadMe
 
-          read and digested Flickr exhaustive API documentation
+#### Step 1: Use React-Create-app to create the scaffolding and a build environment for the app
 
-          saved the bits I would need and some important links
+- Using the command:
+  - `npx create-react-app project9-gallery-app`
 
-      Got a Flickr Api Key
+- I created the app and the build environment for the app...
+  - which is in the directory, project9-gallery-app/
 
-          Logged in to Flicker,
+#### Step 2:  Download project files and start to map out the App
 
-          went to the Flickr's App Garden and got a non-commercial api key..`
+- from from project files...
+  - imported css and 'container' div into ./src/App.js
+  - edited html into jsx format so that...
+    - app would load and look exactly like the app-mockup           
 
-          -- this is being changed --- not sure how, Yet
+#### Step 3:   Studied app-mockup and project speqs
 
-          -- but will somehow move api calls to a backend server
+- the app should have at least..
 
-# Steps to Meet Project Expectations:
+- a Home component: route '/'
+- which loads the header, navbar, a search link and the gallery component
 
-      Step 1: Use React-Create-app to create ..
-       the build environment for the app
+- a Nav component: route of /navLink/:navLinkLabel
+  - whose route is set to pick up a parameter, :navLinkLabel
+  - also loads the header, navbar and gallery components
 
-          Using the command:
+- loads the photos associated with the :navLinkLabel that
+  - was selected from the Home route
 
-              `npx create-react-app project9-gallery-app`
+- each navlink, when selected, will also show the route...
+  - in the browser address bar
 
-          I created the app and the build environment for the app...
+- the /navlinks/:navLinkLabel route will load
+  - the Nav component
+  - and then an if statement uses the :navLinkLabel param
+    - to decide which set of photos to pass to the gallery component
 
-              which is in the directory, project9-gallery-app/
+- a Search component: route of /search
+  - with a search form
+  - also loads the header and gallery components
+  - passes the search results to the gallery component
+  - a new api call is made each time the form is submitted
 
-      Step 2:  Download project files and start to map out the App
 
-          from from project files...
+- the Gallery itself is a re-useable component
+  - with a class of "photo-container"
+  - the photo-container has 3 sub components
+  - the search results or photos to be displayed
+   - with an h2 title
+   - and loads the 24 images, in the set of photo...
+    - passed to it from either the Home, Nav or Search components
 
-             imported css and 'container' div into ./src/App.js
+- a GalleryItem sub-component
+  - each img is displayed is an li  
+  - when iterating through each search result
+  - to be used to render each img  
 
-             edited html into jsx format so that...
+- a component, div with a class of 'not-found'
+  - if a path is invalid
+  - loads a custom 'page not found' error page
 
-                app would load  and look exactly like the app-mockup           
+- a component, div with a class of 'no-Results'
+  - if a search return no results
+  - loads a custom 'no results' error page
 
-      Step 3:   Studied app-mockup and project speqs
+#### Step 4: Plan and Setup Routes
 
-              the app should have at least..
+- after 4 sets of photos loaded...
 
-              a Home component: route '/'
-                 which loads the header, navbar, a search link
-                   and the gallery component
+- / : loads the Home component
+ - set the 'Glaciers' navlink to active
+ - and show the 'Glaciers' set of photos
 
-              a Nav component: route of /navLink/:navLinkLabel
-                whose route is set to pick up a parameter, :navLinkLabel
-                also loads the header, navbar and gallery components
+- /search : when searching for new categories of images.
+  - make an flickr api call with query set to submitted input
+  - results are passed to the gallery component to be displayed
 
-                loads the photos associated with the :navLinkLabel that
-                    was clicked from the Home route
+- /nav/:navlink : loads a the nav component
+  - form the home page or with-in the nav component itself...
+  - the photos object associated with the selected navLink
+   - are passed to the gallery component to be displayed
 
-                    so each navlink, when selected, will also show the route...
-                    in the browser address bar
+- /not found  : not found
+  - displays the page not found error if no matching routes
 
-                   the /navlinks/:navLinkLabel route will load
-                   the Nav component
-                    and then an if statement uses the :navLinkLabel param
-                        to decide which set of photos to pass to
-                          the gallery component
+#### Step 5: Verify flickr api call method is working
 
-              a Search component: route of /search
-                 with a search form
-                    also loads the header and gallery components
-                passes the search results to the gallery component
-                  a new api call is made each time the form is submitted
+- using axios, am getting warnings:
 
+  - HTTP-Based Public Key Pinning is deprecated.
+    - Chrome 69 and later will ignore HPKP response headers.
+    - and not implementing TSL and other security for this project
+  - will want to implement a server-side app to do this part
 
-            the Gallery itself is a re-useable component
-             with a class of "photo-container"
-              the photo-container has 3 sub components
-              the search results or photos to be displayed
-              an h2 title
-              and loads the 24 images, in the set of photo...
-                passed to it from either the Home, Nav or Search components
+- verified I am getting response in json format
 
-            a GalleryItem sub-component
-              each img is displayed is an li  
-                when iterating through each search result
-                  to be used to render each img  
+  - for the sake of making family-friendly
+  - I am hard-coding the safe-search option to safe = 1
 
-            a component, div with a class of 'not-found'
-               if a path is invalid
-               loads a custom 'page not found' error page
+  - although I had to write a least one custom content filter
+  - to cover one word 'innocent' search phrase...
+    - that consistently yielded 'un-safe' results
+  - will need to add more custom filters or do this another way
 
-           a component, div with a class of 'no-Results'
-              if a search return no results
-              loads a custom 'no results' error page
+#### Step 6: Adjust Routes to use BrowserRouter, Switch, Route and NavLinks
 
-      Step 4: Plan and Setup Routes
+- able to access params passed via route through props.match
 
-        after 4 sets of photos loaded...
+- all 'pre-set' gallery sections work
+  - before react ui loads
+   - api calls made
+   - data loaded
 
-            / : loads the Home component
-                set the 'Glaciers' navlink to active
-                and show the 'Glaciers' set of photos
+- only search route makes api calls after react UI loads
 
-            /search : when searching for new categories of images.
-                make an flickr api call with query set to submitted input
-                results are passed to the gallery component to be displayed
+#### Step 7: loaded default json response data and navlinlk photo data
 
-            /nav/:navlink : loads a the nav component
-               form the home page or with-in the nav component itself...
-               the photos object associated with the selected navLink
-               are passed to the gallery component to be displayed
+- the Header component is loaded by Home, Nav and Search components
 
-            /not found  : not found
-                displays the page not found error if no matching routes
+- on initial page load :
 
-      Step 5: Verify flickr api call method is working
+- Home page displays default photos using the Gallery component
 
-            using axios, am getting warnings:
+- the Navlinks point to /nav/:navlinkslabel
+  - which load the nav component
+  - which is an exact dup of the home page
+  - except the actvie nav links stays highlighted
+  - and also displays the photos using the Gallery component
 
-              HTTP-Based Public Key Pinning is deprecated.
-              Chrome 69 and later will ignore HPKP response headers.
-              (Host: api.flickr.com)
+#### Step 8: implemented a query search using the search form
 
-              probably because am not using OATH sign-on
-              and not implementing TSL and other security for this project
+  - makes flickr api call and...
+  - loads photos using the Gallery component
+  - a 'Home' page button load the Home page
 
-            verified I am getting response in json format
+#### Step 9: implement a custom 404 not found component for invalid urls
 
-              for the sake of making family-friendly
+  - also a "no results" component when a search returns no photos
 
-              I am hard-coding the safe-search option to safe = 1
+#### Step 10: fixed bugs
 
-              although I had to write a least one custom content filter ...
-              to cover one word 'innocent' search phrase...
-                that consistently yielded 'un-safe' results
+- major bug fix: continuous api-calls
 
-      Step 6: Adjust Routes to use BrowserRouter, Switch, Route and NavLinks
+  - at first, implemented nav component the same as the search component
+  - this worked great...but....
+  - but this meant that a separate route...
+  - would not be shown for each nav link set of photos
 
-               able to access params passed via route through props.match
+  - once I started using the route with a param
+  - /nav:navlinkslabel
+  - relying on testing for props.match.params.navlinkslabel
+  - resulted in nav component making non-stop api-calls
+  - ugh =(
 
-      Step 7: loaded default json response data and navlinlk photo data
+  - other attempts resulted in reaching a max limit for setting state
+  - also limited by the fact the api-calls are async
+  - so have to wait for these to finish....
+  - before a component tries to access the data
 
-              the Header component is loaded by Home, Nav and Search components
+  - finally decided to load nav link photo once....
+  - after app loads components
+  - at beginning of app
 
-              on initial page load :
+- styling bugs:  
+  - getting the search form and nav links buttons to look more consistent
 
-              Home page displays default photos using the Gallery component
+- getting routes to match project requirements
 
-              the Navlinks point to /nav/:navlinkslabel
-                which load the nav component
-                 - which is an exact dup of the home page
-                 except the actvie nav links stays highlighted
-                 and also displays the photos using the Gallery component
+#### Step 11:  cross-browser consistency
 
-      Step 8: implemented a query search using the search form
+- fixed some styling so the same in Safari, Chrome on Windows10 and MacOS
+- used webkit-appearance to cover user-stylesheet in Safari
 
-              makes flickr api call and...
-               loads photos using the Gallery component
+- looks good on Tablet running iOS, Android, Chrome
 
-              a 'Home' page button load the Home page
+- UI is functional on iPhone and Android phone..
+  - although would like to implement ..
+  - the newer menu style used in modern web site and apps
 
-      Step 9: implement a custom 404 not found component for invalid urls
+## Future Releases:
 
-               also a no results component when a search returns no photos
+- Secure implantation using
+  - react front-end that securely access backend routes
 
-      Step 10: fixed bugs
+- Safe-Search that works consistently:
+  - really wanting to address flickr safe-search problem
+  - did write a custom content filter to ....
+  - started catching innocent phrases ...
+    - that might yield 'un-safe' results
 
-              major bug fix: continuous api-calls
-
-                    at first, implemented nav component the same...
-                      as the search component
-                      this worked great...but....
-                      but this meant that a separate route...
-                        ugh....
-                        would not be shown for each nav link set of photos
-
-                    once I started using the route with a param
-                     /nav:navlinkslabel
-                      relying on testing for props.match.params.navlinkslabel
-                      resulted in nav component making non-stop api-calls
-
-                    other attempts resulted in reaching a max limit for
-                      setting state
-
-                    also limited by the fact the api-calls are async
-                      so have to wait for these to finish....
-                        ... before a component tries to access the data
-
-                    finally decided to load nav link photo once....
-                     after app loads components
-                      at beginning of app
-
-              styling bugs:  getting the search form and nav links buttons....
-                      to look more consistent
-
-              getting routes to match project requirements
-
-      Step 11:  cross-browser consistency
-
-              fixed some styling so the same in Safari, Chrome and Edge
-              on Windows10 and MacOS
-              used webkit-appearance to over user-stylesheet in Safari
-
-              looks good on Tablet running
-              iOS, Android, Chrome
-
-              UI is functional on iPhone and Andriod phone..
-               although would like to implement ..
-                the newer menu style used in modern web site and apps
-
-# Future Releases:
-
-          Secure implantation
-            react front-end that securely access backend routes
-
-          Safe-Search:
-            really wanting to address flickr safe-search problem
-              and leaving well enough alone for now
-            did write a custom content filter to ....
-              started catching innocent phrases ...
-                that might yield 'un-safe' results
-
-          Full Screen View:
-            I would like to implement a full-screen view
-            when an image is clicked in the gallery view
-             full-screen component will display the image...
-               using the entire browse window
-            there will be a next, previous to simply view those images..
-              with out going back to the gallery view
-            there will also be a 'back to the gallery component'
-              showing the same set of photos
-
-            I almost had this figured out, but have some bugs to fix before...
-              committing the changes to the master branch
-
-              also this would seem to be beyond the project speqs
+- Full Screen View:
+  - when an image is clicked in the gallery view
+  - full-screen component will display the image...
+  - using the entire browse window
+  - there will be a next, previous to simply view those images..
+  - without going back to the gallery view
+  - there will also be a 'back to the gallery component' showing the same set of photos
