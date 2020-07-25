@@ -8,7 +8,7 @@
   - or a glutton for punishment
     - You can read the developer-how-to using the link below...
 
-- [README.MD for building and running the TD-Project9/project9-gallery-app](https://github.com/pereznetworks/TD-Project9/tree/master/project9-gallery-app)
+- [For developers](https://github.com/pereznetworks/TD-Project9/tree/master/project9-gallery-app)
 
 ## Project Summary:
 
