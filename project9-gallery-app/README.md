@@ -44,25 +44,22 @@
   - for complete info using the build and development work-flow and bootstrapping provided by Create App see the following link...
   - [ReadMe for Create App](./CreateReactApp-README.md)
 
-## Flicker API keys setup:
+## Flicker API keys setup needed
 
 - To get this project up and running you will need...
   - a Flickr non-commercial api key.
   - I did not include mine in this repo for obvious reasons..
 
-### Steps to get a Flicker non-commercial api key:
+## STEP 1:
 
-#### STEP 1:
-
+- get your own Flickr api key
   - use whatever email address you want to sign-up for sign in to Flickr
-
   - and go to the App Garden and apply for a non-commercial api key..
-
   - [Follow this link to apply for a non-commercial api-key from Flickr](https://www.flickr.com/services/apps/create/apply/)
 
-#### STEP 2:
+## STEP 2:
 
-  - Place your API-KEY and associated SECRET in a safe, secure place
+- Place your API-KEY and associated SECRET in a safe, secure place
 
   - Do NOT place this info in your code
     - place it in a separate file that is....
@@ -72,7 +69,7 @@
     - .. in short .. you dont ...
     - see STEP 4
 
-#### STEP 3:
+## STEP 3:
 
   - Decide whether you will need to use ...
 
@@ -87,7 +84,7 @@
 
   - [To read more Flickr apps and OATH follow this link](https://www.flickr.com/services/api/auth.oauth.html)
 
-#### STEP 4:
+## STEP 4:
 
   - As stated above,
     - this repo does not use any front-end authentication
@@ -144,7 +141,7 @@
 
 - Okay, more steps still to go
 
-#### Step 5:
+## Step 5:
 
 - Verify the flickr api call and methods that your app will need...
 
@@ -170,7 +167,7 @@
 
 - [To verify your flickr method api call syntax, follow this link](https://www.flickr.com/services/api/explore/flickr.photos.search)
 
-#### Step 6:
+## Step 6:
 
 - using flickr.photo.search
   - with a query of 'sunset'
@@ -203,7 +200,7 @@
 - Until I can find a solution to to STEP 6:caveat issue
   - I will not be moving forward with this project
 
-#### Step 7:
+## Step 7:
 
 - If you get past steps 1 through 6
 
