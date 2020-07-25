@@ -71,11 +71,11 @@
     -- this is being changed --- not sure how, Yet
     -- but will somehow move api calls to a backend server
 
-### Steps to Meet Project Expectations:
+## Building the App:
 
 - So these steps dont exactly match the steps details in the developer ReadMe
 
-#### Step 1: Use React-Create-app to create the scaffolding and a build environment for the app
+### Step 1: Use React-Create-app to create the scaffolding and a build environment for the app
 
 - Using the command:
   - `npx create-react-app project9-gallery-app`
@@ -83,14 +83,14 @@
 - I created the app and the build environment for the app...
   - which is in the directory, project9-gallery-app/
 
-#### Step 2:  Download project files and start to map out the App
+### Step 2: Download project files and start to map out the App
 
 - from from project files...
   - imported css and 'container' div into ./src/App.js
   - edited html into jsx format so that...
     - app would load and look exactly like the app-mockup           
 
-#### Step 3:   Studied app-mockup and project speqs
+### Step 3: Studied app-mockup and project speqs
 
 - the app should have at least..
 
@@ -140,7 +140,7 @@
   - if a search return no results
   - loads a custom 'no results' error page
 
-#### Step 4: Plan and Setup Routes
+### Step 4: Plan and Setup Routes
 
 - after 4 sets of photos loaded...
 
@@ -160,7 +160,7 @@
 - /not found  : not found
   - displays the page not found error if no matching routes
 
-#### Step 5: Verify flickr api call method is working
+### Step 5: Verify flickr api call method is working
 
 - using axios, am getting warnings:
 
@@ -179,7 +179,7 @@
     - that consistently yielded 'un-safe' results
   - will need to add more custom filters or do this another way
 
-#### Step 6: Adjust Routes to use BrowserRouter, Switch, Route and NavLinks
+### Step 6: Adjust Routes to use BrowserRouter, Switch, Route and NavLinks
 
 - able to access params passed via route through props.match
 
@@ -190,7 +190,7 @@
 
 - only search route makes api calls after react UI loads
 
-#### Step 7: loaded default json response data and navlinlk photo data
+### Step 7: loaded default json response data and navlinlk photo data
 
 - the Header component is loaded by Home, Nav and Search components
 
@@ -204,17 +204,17 @@
   - except the actvie nav links stays highlighted
   - and also displays the photos using the Gallery component
 
-#### Step 8: implemented a query search using the search form
+### Step 8: implemented a query search using the search form
 
   - makes flickr api call and...
   - loads photos using the Gallery component
   - a 'Home' page button load the Home page
 
-#### Step 9: implement a custom 404 not found component for invalid urls
+### Step 9: implement a custom 404 not found component for invalid urls
 
   - also a "no results" component when a search returns no photos
 
-#### Step 10: fixed bugs
+### Step 10: fixed bugs
 
 - major bug fix: continuous api-calls
 
@@ -243,7 +243,7 @@
 
 - getting routes to match project requirements
 
-#### Step 11:  cross-browser consistency
+### Step 11:  cross-browser consistency
 
 - fixed some styling so the same in Safari, Chrome on Windows10 and MacOS
 - used webkit-appearance to cover user-stylesheet in Safari
