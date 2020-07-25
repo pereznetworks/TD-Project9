@@ -5,6 +5,9 @@
 project9-gallery-app/node_modules/
 project9-gallery-app/src/Flickr/config.js
 
+# internal files
+.privateInfo
+
 # Logs
 logs
 *.log
