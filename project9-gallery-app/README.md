@@ -219,3 +219,5 @@
 
 - And a for the next phase of your project
   - Godspeed...
+
+#### [Back to Project Home](https://github.com/pereznetworks/TD-Project9#td-project9---yet-another-react-gallery-app) - [Back to Top](https://github.com/pereznetworks/TD-Project9/tree/master/project9-gallery-app#project-update)
