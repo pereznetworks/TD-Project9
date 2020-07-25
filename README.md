@@ -48,7 +48,7 @@
 
 - The navLink activeStyle uses `background color: #800080;`
 
-### Preparing for the project:
+## Preparing for the project:
 
 ### Created this GitHib repo
 
