@@ -4,10 +4,6 @@
 
 - This project is still an experimental phase
 
-- If you are a Developer and are very brave or a glutton for punishment
-  - You can read the developer-how-to using the link below...
-  - [For developers](https://github.com/pereznetworks/TD-Project9/tree/master/project9-gallery-app)
-
 ## Project Summary:
 
 - Built as part of Team Treehouse Full-Stack Java Script Tech Degree...
@@ -271,3 +267,9 @@
   - there will be a next, previous to simply view those images..
   - without going back to the gallery view
   - there will also be a 'back to the gallery component' showing the same set of photos
+
+## For Developers
+
+- If you are a Developer and are very brave or a glutton for punishment
+  - You can also read the developer-how-to using the link below...
+  - [For developers](https://github.com/pereznetworks/TD-Project9/tree/master/project9-gallery-app)
