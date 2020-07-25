@@ -273,3 +273,5 @@
 - If you are a Developer and are very brave or a glutton for punishment
   - You can also read the developer-how-to using the link below...
   - [For developers](https://github.com/pereznetworks/TD-Project9/tree/master/project9-gallery-app)
+
+#### [Back to Top](https://github.com/pereznetworks/TD-Project9#td-project9---yet-another-react-gallery-app)
