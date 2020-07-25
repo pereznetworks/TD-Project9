@@ -259,11 +259,13 @@
 - Secure implantation using
   - react front-end that securely access backend routes
 
+
 - Safe-Search that works consistently:
   - really wanting to address flickr safe-search problem
   - did write a custom content filter to ....
   - started catching innocent phrases ...
     - that might yield 'un-safe' results
+
 
 - Full Screen View:
   - when an image is clicked in the gallery view
